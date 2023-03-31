@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.homeContainer{
+  width: 100%;
+  padding: 0 15px;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.blockContainer{
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(15, auto);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.portada{
+  width: 100%;
+}
+
+.titulo, .subTitulo{
+  text-align: center;
+  font-family: 'Roboto Serif', serif;
+  font-weight: 200;
+}
+
+.titulo{
+  padding: 20px 0 5px 0;
+  font-size: 28px;
+}
+
+.subTitulo{
+  
+  font-size: 18px;
+}
+
+p{
+  color: #4e5c66;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 12px 0;
+}
+
+.parrafo1{
+  margin-top: 20px;
+}
+
+.gancho1{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  color: #158cba;
+  font-size: 20px;
+}
+
+.ctaFormulario1{
+  text-align: center;
+  font-size: 22px;
+}
+
+.ctaFormSubTitulo1{
+  text-align: center;
+  padding: 0;
+  font-size: 15px;
+}
+
+.ctaFormulario2{
+  margin: 25px 0 10px 0;
+  text-align: center;
+  font-size: 20px;
+}
+
+.parrafo4{
+  margin-top: 25px;
 }
