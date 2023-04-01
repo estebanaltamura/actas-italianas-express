@@ -4,9 +4,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+          <img className="portada" src="https://i.postimg.cc/c1PrjMs1/portadamobile3.jpg" />
       <div className="homeContainer">
         <div className="blockContainer">
-          <img className="portada" src="https://i.postimg.cc/k4NgbjjX/actamobileportada.jpg" />
 
           <h1 className="titulo">ACTAS ITALIANAS EXPRESS</h1>
           <h2 className="subTitulo">ELEGI VIVIR MEJOR</h2>
@@ -20,11 +20,12 @@ function App() {
           <p className="ctaFormSubTitulo1">(AVO es el antepasado italiano que migro a la argentina)</p>
           <h3 className="ctaFormulario2">Dejenos sus datos y lo contactaremos en menos de 24 horas</h3>
           <Form />
-
+          <div className="lineaDivisoria"></div>
           <p className="parrafo4">Luego de tener el acta de nacimiento de tu AVO tenes que solicitar en Argentina el certificado de no naturalizacion</p>
           <p className="parrafo5">El certificado de no naturalizacion demuestra que el AVO no renuncio a su ciudadania italiana</p>
           <p className="parrafo6">Teniendo el acta de nacimiento italiana y el certificado de no naturalizacion indicando que tu avo no renuncio a su ciudadania italiana eso demuestra que <b>TENES DERECHO A SER CIUDADANO/A ITALIANO</b></p>
-          <p className="parrafo7">Hay diferentes formas de conseguir la ciudadania italiana, pero todas tienen en comun el necesitar toda la documentacion sobre el antepasado que nos da el derecho a ser ciudadano/a</p>
+          <div className="lineaDivisoria"></div>
+          <p className="parrafo7">HAY DIFERENTES FORMAS DE CONSEGUIR LA CIUDADANIA ITALIANA, PERO TODAS TIENEN ALGO EN COMUN: SE NECESITA LA INFORMACION DE TU ANTEPASADO QUE MIGRO A ARGENTINA QUE NOS DA EL DERECHO A SER CIUDADANO/A ITALIANO/A</p>
 
         </div>
       </div>
