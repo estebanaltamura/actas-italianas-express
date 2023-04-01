@@ -7,7 +7,9 @@
 
 
 .homeContainer{
+  margin: 0 auto;
   width: 100%;
+  height: fit-content;
   padding: 0 15px;
   min-height: 100vh;
 }
@@ -19,7 +21,10 @@
 }
 
 .portada{
-  width: 100%;
+  display: block;
+  margin: 0 auto;
+  width: 100%; 
+  padding-top: 30px; 
 }
 
 .titulo, .subTitulo{
@@ -95,4 +100,20 @@ p{
   color: #158cba;
   font-size: 20px;
   font-weight: 700;
+}
+
+@media screen and (min-width: 768px){
+  .homeContainer{
+    max-width: 900px;
+    padding: 0 20px;
+    min-height: 100vh;
+  }
+
+  .portada{    
+    display: block;    
+    width: 100%;
+    max-width: 1000px;    
+    margin: 0 auto;
+
+  }
 }

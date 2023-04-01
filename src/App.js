@@ -1,10 +1,20 @@
 import { Form } from './components/Form/Form';
+import { Header } from './components/Header/Header';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-          <img className="portada" src="https://i.postimg.cc/XY4Hf5Bx/portadamobile4.jpg" />
+
+      <Header />
+
+          {
+            window.innerWidth < 768 ? 
+              <img className="portada" src="https://i.postimg.cc/XY4Hf5Bx/portadamobile4.jpg" />
+                                    :
+              <img className="portada" src="https://i.postimg.cc/wvjpTvpT/portadadesktop2.jpg" />                      
+          }
+          
       <div className="homeContainer">
         <div className="blockContainer">
 
