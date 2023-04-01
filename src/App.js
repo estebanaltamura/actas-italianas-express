@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-          <img className="portada" src="https://i.postimg.cc/c1PrjMs1/portadamobile3.jpg" />
+          <img className="portada" src="https://i.postimg.cc/XY4Hf5Bx/portadamobile4.jpg" />
       <div className="homeContainer">
         <div className="blockContainer">
 
