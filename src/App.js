@@ -1,20 +1,19 @@
 import { Form } from './components/Form/Form';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-
       <Header />
-
-          {
-            window.innerWidth < 768 ? 
-              <img className="portada" src="https://i.postimg.cc/XY4Hf5Bx/portadamobile4.jpg" />
-                                    :
-              <img className="portada" src="https://i.postimg.cc/wvjpTvpT/portadadesktop2.jpg" />                      
-          }
+      {
+      window.innerWidth < 768 ? 
+        <img className="portada" src="https://i.postimg.cc/XY4Hf5Bx/portadamobile4.jpg" />
+                              :
+        <img className="portada" src="https://i.postimg.cc/wvjpTvpT/portadadesktop2.jpg" />                      
+      }
           
       <div className="homeContainer">
         <div className="blockContainer">
@@ -37,11 +36,8 @@ function App() {
           <p className="parrafo6">Teniendo el acta de nacimiento italiana y el certificado de no naturalizacion indicando que tu avo no renunció a su ciudadanía italiana eso demuestra que <b>TENES DERECHO A SER CIUDADANO/A ITALIANO</b></p>
           <div className="lineaDivisoria2"></div>
           <p className="parrafo7">HAY DIFERENTES FORMAS DE CONSEGUIR LA CIUDADANIA ITALIANA, PERO TODAS TIENEN ALGO EN COMUN: SE NECESITA LA INFORMACION DE TU ANTEPASADO QUE MIGRO A ARGENTINA QUE NOS DA EL DERECHO A SER CIUDADANO/A ITALIANO/A</p>
-
-         
         </div>
       </div>
-
       <Footer />
     </div>
   );

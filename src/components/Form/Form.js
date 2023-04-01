@@ -1,4 +1,5 @@
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -13,6 +14,7 @@ export const Form = ()=>{
     const fullNameValueInput = useRef()
     const phoneValueInput = useRef()
     const mailValueInput = useRef()
+    const history = useNavigate()
 
     const onSubmitHandler = (e)=>{
         e.preventDefault()
@@ -33,7 +35,7 @@ export const Form = ()=>{
                     fullNameValueInput.current.value = ""
                     phoneValueInput.current.value = ""
                     mailValueInput.current.value = ""
-                    MySwal.fire("Envio exitoso. En maximo 24 horas nos estaremos comunicando con usted")
+                    history("/graciasPorSuConsulta")
                 }).catch(error=>{                     
                     console.log(error)
                     MySwal.fire("No pudimos procesar su orden. Intente nuevamente")
