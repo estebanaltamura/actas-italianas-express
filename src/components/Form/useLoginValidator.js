@@ -9,12 +9,12 @@ export const useLoginValidator = (e)=>{
     const fullNameValidator = (fullName)=>{
         const digitRegExp = /\d/
         if(digitRegExp.test(fullName)){
-            setFullNameAlert("digits are not allowed")
+            setFullNameAlert("Solo ingrese letras. Numeros no permitidos")
         } 
 
         const isThereTwoWords = /\w+\s*\w+/
         if(!isThereTwoWords.test(fullName)){
-            setFullNameAlert("please insert name and lastname")
+            setFullNameAlert("Por favor inserte nombre completo")
         } 
 
         else return true
@@ -50,32 +50,32 @@ export const useLoginValidator = (e)=>{
     
     const mailValidator = (mail)=>{
         if (mail == ""){
-            setMailAlert("insert a valid e-mail address"); 
+            setMailAlert("Ingrese un mail valido, ejemplo: mail@mail.com"); 
             return            
         } 
         
         const twoDotsRegExp = /\.{2,}/
         if(twoDotsRegExp.test(mail)){
-            setMailAlert("Two consecutive dots are not allowed") 
+            setMailAlert("No se permiten dos puntos (..) consecutivos") 
             return           
         }  
         
         const dotAtStart = /^\.{1}/
         const dotAtEnd = /\.{1}@{1}/
         if(dotAtStart.test(mail) || dotAtEnd.test(mail)){
-            setMailAlert("The address cannot start or precede the @ with a dot (.)") 
+            setMailAlert("La direccion de mail no puede empezar ni terminar con un punto (.)") 
             return           
         }  
         
         const multiplesAt = /@.*@/
         if(multiplesAt.test(mail)){
-            setMailAlert("More than one @ it is not allowed")     
+            setMailAlert("No esta permitido mas de un arroba (@)")     
             return       
         }  
         
         const regExpmail = /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}/
         if(!regExpmail.test(mail)){
-            setMailAlert("insert a valid e-mail address")
+            setMailAlert("Ingrese un mail valido, ejemplo: mail@mail.com")
             return 
         } 
         return true

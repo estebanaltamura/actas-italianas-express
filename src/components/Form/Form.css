@@ -27,7 +27,9 @@ form{
   
 .subtitle {
     display: block;
-    font-size: 11px;
+    font-size: 14px;
+    font-weight: 700;
+    
     color: black;
     margin-bottom: 5px;
 }
@@ -38,6 +40,8 @@ input {
     border-bottom: solid rgb(143, 143, 143) 1px;
     background: none;
     color: black;
+    font-weight: 700;
+    font-size: 20px;
     height: 35px;
     width: calc(100% - 2px);
     margin-bottom: 5px;
@@ -51,7 +55,8 @@ input:focus-visible {
     display: flex;
     align-items:flex-start;
     color: #FF0400;
-    font-size: 14PX;
+    font-size: 17PX;
+    font-weight: 700;
     height: 30px;
     width: 100%;
     margin-bottom:20px;
@@ -63,12 +68,14 @@ input:focus-visible {
     border: none;
     border-radius: 8px;
     box-shadow: 2px 2px 7px #38d39f70;
-    background: #5E916F;
+    background: #384d56;
     color: rgba(255, 255, 255, 0.8);
     margin: 20px 30px 0 30px;
     width: calc(100% - 60px);
     height: 35px;
     transition: all 1s;
+    font-size: 20px;
+    font-weight: 700;
 }
   
 .submit-btn:hover {

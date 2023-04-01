@@ -3,6 +3,20 @@
   margin: 0;
   padding: 0;
   font-family: "Source Sans Pro", Arial, sans-serif;
+  text-decoration: none;
+}
+
+a{
+  cursor: pointer;
+  color: black;
+}
+
+a:visited{
+  color: white;
+}
+
+a:hover{
+  color: #499e9b
 }
 
 
@@ -58,7 +72,7 @@ p{
   text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  color: #158cba;
+  color: #d55e20;
   font-size: 20px;
 }
 
@@ -96,8 +110,8 @@ p{
 .parrafo7{
   text-align: center;
   margin-top: 25px;
-  margin-bottom: 60px;
-  color: #158cba;
+  margin-bottom: 30px;
+  color: #d55e20;
   font-size: 20px;
   font-weight: 700;
 }
