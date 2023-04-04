@@ -25,12 +25,18 @@ export const useLoginValidator = (e)=>{
 
         const regExpCheck = (cadena)=>{
             
-            
+            const digitRegExpVacia = /^$/
+            const digitRegExpNumerosGuiones = /^[\d-]*$/
             const digitRegExpComienza = /^\d/
             const digitRegExpTermina = /\d+$/
             const digitRegExpGuiones = /--/
-            const digitRegExpNumerosGuiones = /^[\d-]*$/
-
+            
+            
+            
+            if(digitRegExpVacia.test(cadena)){
+                setPhoneAlert("Ingrese un numero de whatsapp")
+                return false
+            } 
 
             if(!digitRegExpNumerosGuiones.test(cadena)){
                 setPhoneAlert("Solo numeros y/o guiones")
