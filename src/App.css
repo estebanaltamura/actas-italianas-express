@@ -6,6 +6,10 @@
   text-decoration: none;
 }
 
+.hidden{
+  display: none;
+}
+
 a{
   cursor: pointer;
   color: black;
