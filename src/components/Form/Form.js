@@ -34,7 +34,7 @@ export const Form = ()=>{
 
         const phoneValueHandled2 = phoneValueHandled.join("")
 
-        /*
+        
         if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValue) && mailValidator(mailValue)){
         const db = getFirestore()
         const queryCollection = collection(db, "Leads")              
@@ -49,7 +49,7 @@ export const Form = ()=>{
                     MySwal.fire("No pudimos procesar su orden. Intente nuevamente")
                 })    
         }   
-        */   
+          
             
     }
     
