@@ -6,6 +6,10 @@
   text-decoration: none;
 }
 
+
+.app{
+  display:flex;
+}
 .hidden{
   display: none;
 }

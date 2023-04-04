@@ -9,16 +9,16 @@ import './App.css';
 
 function App() {
 
-  const homeContainer = useRef()
+  const app = useRef()
   
 
   const onLoadImageHandler = ()=>{
-    homeContainer.current.classList.replace("hidden", "homeContainer")
+    app.current.classList.replace("hidden", "app")
     
   }
 
   return (
-    <div className="App">
+    <div className="App" ref={app}>
       <Header />
       
       {
@@ -28,7 +28,7 @@ function App() {
         <img className="portada" onLoad={onLoadImageHandler} src="https://i.postimg.cc/wvjpTvpT/portadadesktop2.jpg" />                      
       }
           
-      <div className="hidden" ref={homeContainer} >
+      <div className="homeContainer"  >
         <div className="blockContainer">
 
           <h1 className="titulo">ACTAS ITALIANAS EXPRESS</h1>
