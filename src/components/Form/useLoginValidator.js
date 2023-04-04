@@ -24,27 +24,39 @@ export const useLoginValidator = (e)=>{
         const stringSinEspacios = str.replaceAll(" ", "")
 
         const regExpCheck = (cadena)=>{
+            
+            
+            const digitRegExpComienza = /^\d/
+            const digitRegExpTermina = /\d+$/
+            const digitRegExpGuiones = /--/
+            const digitRegExpNumerosGuiones = /^[\d-]*$/
 
-            //(555)555-5555
-            const expresion1 = /.*/
-            //555-555-5555
-            const expresion2 = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/
-            //1 555-555-5555
-            const expresion3 = /^1[0-9]{3}-[0-9]{3}-[0-9]{4}$/
-            //1 (555) 555-5555
-            const expresion4 = /^1\([0-9]{3}\)[0-9]{3}-[0-9]{4}$/
-            //15555555555
-            const expresion5 = /^1[0-9]{10}$/
-            ///5555555555
-            const expresion6 = /^[0-9]{10}$/
 
-            return expresion1.test(cadena)
+            if(!digitRegExpNumerosGuiones.test(cadena)){
+                setPhoneAlert("Solo numeros y/o guiones")
+                return false
+            } 
+            
+            if(!digitRegExpComienza.test(cadena)){
+                setPhoneAlert("Debe comenzar con un numero")
+                return false
+            } 
+            
+            if(!digitRegExpTermina.test(cadena)){
+                setPhoneAlert("Debe terminar con un numero")
+                return false
+            } 
+
+            if(digitRegExpGuiones.test(cadena)){
+                setPhoneAlert("No debe haber dos guiones juntos")
+                return false
+            } 
         }
 
-        if (regExpCheck(stringSinEspacios) == false){
-         setPhoneAlert("wrong format. Insert a US phone number")
-        } 
-        else return true        
+        
+        if (regExpCheck(stringSinEspacios) !== false){
+            return true 
+        }                 
     }
     
     

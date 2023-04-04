@@ -22,16 +22,24 @@ export const Form = ()=>{
         const fullNameValue = e.target.fullName.value
         const phoneValue = e.target.phone.value
         const mailValue = e.target.mail.value
-        
+
         fullNameValidator(fullNameValue)
         telephoneValidator(phoneValue)
         mailValidator(mailValue)
+
+
+        const phoneValueHandled = [...phoneValue].filter(element => {
+            return (element !== " " && element !== "-")  && element
+        });
+
+        const phoneValueHandled2 = phoneValueHandled.join("")
+
         
-        if (fullNameValidator(fullNameValue) && mailValidator(mailValue)){
+        if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValue) && mailValidator(mailValue)){
         const db = getFirestore()
         const queryCollection = collection(db, "Leads")              
         
-        addDoc(queryCollection, {fullname: fullNameValue,  phoneNumber: phoneValue, email: mailValue, cumplimentada: false}).then(res=>{
+        addDoc(queryCollection, {fullname: fullNameValue,  phoneNumber: phoneValueHandled2, email: mailValue, cumplimentada: false}).then(res=>{
                     fullNameValueInput.current.value = ""
                     phoneValueInput.current.value = ""
                     mailValueInput.current.value = ""
@@ -59,7 +67,7 @@ export const Form = ()=>{
                                     </div>
 
                                     <div className="inputContainer">
-                                        <span className="subtitle">TELEFONO:</span>  
+                                        <span className="subtitle">WHASTAPP:</span>  
                                         <input ref={phoneValueInput} autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts}/>
                                         
                                         <span className="inputAlerts">{phoneAlert}</span>
