@@ -15,11 +15,11 @@ export const Form = ()=>{
     const fullNameValueInput = useRef()
     const phoneValueInput = useRef()
     const mailValueInput = useRef()
+    const submit = useRef()
     const history = useNavigate()
 
     const onSubmitHandler = (e)=>{
         e.preventDefault()
-
         const fullNameValue = e.target.fullName.value
         const phoneValue = e.target.phone.value
         const mailValue = e.target.mail.value
@@ -46,6 +46,7 @@ export const Form = ()=>{
                     fullNameValueInput.current.value = ""
                     phoneValueInput.current.value = ""
                     mailValueInput.current.value = ""
+                    submit.current.setAttribute("disabled", "true");
                     history("/graciasPorSuConsulta")
                 }).catch(error=>{                     
                     console.log(error)
@@ -82,7 +83,7 @@ export const Form = ()=>{
                                         <span className="inputAlerts">{mailAlert}</span>
                                     </div>
                                     
-                                    <button type="submit"  className="submit-btn">ENVIAR</button>
+                                    <button ref={submit} type="submit"  className="submit-btn">ENVIAR</button>
                                 </form>
                             </div>  
                         </div>                   
