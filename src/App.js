@@ -1,34 +1,23 @@
-import { useRef } from 'react';
-
 import { Form } from './components/Form/Form';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
-import Spinner from 'react-bootstrap/Spinner';
 
 import './App.css';
 
 function App() {
 
-  const app = useRef()
-  
-
-  const onLoadImageHandler = ()=>{
-    app.current.classList.replace("hidden", "app")
-    
-  }
-
   return (
-    <div className="App" ref={app}>
+    <div className="App">
       <Header />
       
       {
       window.innerWidth < 768 ? 
-        <img className="portada" onLoad={onLoadImageHandler} src="https://i.postimg.cc/XY4Hf5Bx/portadamobile4.jpg" />
+        <img className="portada"  src="https://i.postimg.cc/XY4Hf5Bx/portadamobile4.jpg" />
                               :
-        <img className="portada" onLoad={onLoadImageHandler} src="https://i.postimg.cc/wvjpTvpT/portadadesktop2.jpg" />                      
+        <img className="portada"  src="https://i.postimg.cc/wvjpTvpT/portadadesktop2.jpg" />                      
       }
           
-      <div className="homeContainer"  >
+      <div className="homeContainer" >
         <div className="blockContainer">
 
           <h1 className="titulo">ACTAS ITALIANAS EXPRESS</h1>
