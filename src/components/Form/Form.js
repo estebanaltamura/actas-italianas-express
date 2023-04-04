@@ -67,7 +67,7 @@ export const Form = ()=>{
                                     </div>
 
                                     <div className="inputContainer">
-                                        <span className="subtitle">WHASTAPP:</span>  
+                                        <span className="subtitle">WHATSAPP:</span>  
                                         <input ref={phoneValueInput} autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts}/>
                                         
                                         <span className="inputAlerts">{phoneAlert}</span>
