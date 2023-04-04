@@ -28,7 +28,9 @@ export const Form = ()=>{
         telephoneValidator(phoneValue)
         mailValidator(mailValue)
 
+        const date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric", hour: "2-digit", minute: "2-digit"})
 
+        console.log(date)
         const phoneValueHandled = [...phoneValue].filter(element => {
             return (element !== " " && element !== "-")  && element
         });
@@ -40,7 +42,7 @@ export const Form = ()=>{
         const db = getFirestore()
         const queryCollection = collection(db, "Leads")              
         
-        addDoc(queryCollection, {fullname: fullNameValue,  phoneNumber: phoneValueHandled2, email: mailValue, cumplimentada: false}).then(res=>{
+        addDoc(queryCollection, {fullname: fullNameValue,  phoneNumber: phoneValueHandled2, email: mailValue, date: date, cumplimentada: false}).then(res=>{
                     fullNameValueInput.current.value = ""
                     phoneValueInput.current.value = ""
                     mailValueInput.current.value = ""
