@@ -20,23 +20,22 @@ export const Form = ()=>{
 
     const onSubmitHandler = (e)=>{
         e.preventDefault()
+
         const fullNameValue = e.target.fullName.value
-        const phoneValue = e.target.phone.value
+        const phoneValue = e.target.phone.value[0] === "0" ? e.target.phone.value.slice(1) : e.target.phone.value
         const mailValue = e.target.mail.value
 
-        fullNameValidator(fullNameValue)
-        telephoneValidator(phoneValue)
-        mailValidator(mailValue)
-
         const date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric", hour: "2-digit", minute: "2-digit"})
-
-        console.log(date)
+        
         const phoneValueHandled = [...phoneValue].filter(element => {
             return (element !== " " && element !== "-")  && element
         });
 
         const phoneValueHandled2 = phoneValueHandled.join("")
-
+        
+        fullNameValidator(fullNameValue)
+        telephoneValidator(phoneValueHandled2)
+        mailValidator(mailValue)
         
         if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValue) && mailValidator(mailValue)){
         const db = getFirestore()

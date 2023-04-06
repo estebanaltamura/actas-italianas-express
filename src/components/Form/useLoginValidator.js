@@ -57,6 +57,17 @@ export const useLoginValidator = (e)=>{
                 setPhoneAlert("No debe haber dos guiones juntos")
                 return false
             } 
+
+            if(cadena.length > 10){
+                 setPhoneAlert("Ingreso numeros de mas")
+                 return false
+            }
+
+            if(cadena.length < 10){
+                setPhoneAlert("Ingreso numeros de menos")
+                return false
+           }
+
         }
 
         
