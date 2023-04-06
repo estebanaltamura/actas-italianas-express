@@ -69,7 +69,8 @@ export const useLoginValidator = (e)=>{
                     showCancelButton: true,
                     cancelButtonText: 'ok',
                     html: <div>
-                        <h4>Formatos aceptados</h4><br/>
+                        <h4>Formatos aceptados</h4>
+                        <h5>(Ingreso numeros de mas)</h5><br/>                        
                         <span>Opcion 1: 1131234561</span><br/>
                         <span>Opcion 2: (113)-123-4561</span><br/>
                         <span>Opcion 3: 113-123-4561</span><br/>
@@ -90,7 +91,8 @@ export const useLoginValidator = (e)=>{
                     showCancelButton: true,
                     cancelButtonText: 'ok',
                     html: <div>
-                        <h4>Formatos aceptados</h4><br/>
+                        <h4>Formatos aceptados</h4>
+                        <h5>(Ingreso numeros de menos)</h5><br/> 
                         <span>Opcion 1: 1131234561</span><br/>
                         <span>Opcion 2: (113)-123-4561</span><br/>
                         <span>Opcion 3: 113-123-4561</span><br/>

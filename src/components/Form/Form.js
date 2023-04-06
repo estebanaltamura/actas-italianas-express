@@ -33,7 +33,7 @@ export const Form = ()=>{
 
         const indexFirstValidNumber = phoneValueHandled.findIndex(element=> element !== "0")
 
-        const phoneValueHandled2 = phoneValueHandled.slice(indexFirstValidNumber).join("")
+        const phoneValueHandled2 = "+549" + phoneValueHandled.slice(indexFirstValidNumber).join("")
         console.log(phoneValueHandled2)
 
         fullNameValidator(fullNameValue)
