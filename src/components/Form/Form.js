@@ -22,17 +22,20 @@ export const Form = ()=>{
         e.preventDefault()
 
         const fullNameValue = e.target.fullName.value
-        const phoneValue = e.target.phone.value[0] === "0" ? e.target.phone.value.slice(1) : e.target.phone.value
+        const phoneValue = e.target.phone.value
         const mailValue = e.target.mail.value
 
         const date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric", hour: "2-digit", minute: "2-digit"})
         
         const phoneValueHandled = [...phoneValue].filter(element => {
-            return (element !== " " && element !== "-")  && element
+            return (element !== " " && element !== "-" && element !== "(" && element !== ")")  && element
         });
 
-        const phoneValueHandled2 = phoneValueHandled.join("")
-        
+        const indexFirstValidNumber = phoneValueHandled.findIndex(element=> element !== "0")
+
+        const phoneValueHandled2 = phoneValueHandled.slice(indexFirstValidNumber).join("")
+        console.log(phoneValueHandled2)
+
         fullNameValidator(fullNameValue)
         telephoneValidator(phoneValueHandled2)
         mailValidator(mailValue)

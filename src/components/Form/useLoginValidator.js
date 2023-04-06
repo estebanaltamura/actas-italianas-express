@@ -1,6 +1,10 @@
 import { useState } from "react"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 export const useLoginValidator = (e)=>{
+
+    const MySwal = withReactContent(Swal)
     
     const [fullNameAlert, setFullNameAlert] = useState("")
     const [mailAlert, setMailAlert] = useState("")
@@ -60,11 +64,39 @@ export const useLoginValidator = (e)=>{
 
             if(cadena.length > 10){
                  setPhoneAlert("Ingreso numeros de mas")
+                 MySwal.fire({
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: 'ok',
+                    html: <div>
+                        <h4>Formatos aceptados</h4><br/>
+                        <span>Opcion 1: 113-123-4561</span><br/>
+                        <span>Opcion 2: (113)-123-4561</span><br/>
+                        <span>Opcion 3: 1131234561</span><br/>
+                        <span>Opcion 4: 02234561234</span><br/> 
+                        <span>Opcion 5: (0223)-456-1234</span><br/>
+                        <span>Opcion 6: 0223-456-1234</span><br/><br/>
+                        <span>Se permite el uso de parentesis y guiones</span>        
+                    </div>            
+                })
                  return false
             }
 
             if(cadena.length < 10){
                 setPhoneAlert("Ingreso numeros de menos")
+                MySwal.fire({
+                    showConfirmButton: false,
+                    showCancelButton: true,
+                    cancelButtonText: 'ok',
+                    html: <div>
+                        <h4>Formatos aceptados</h4><br/>
+                        <span>Opcion 1: 113-123-4561</span><br/>
+                        <span>Opcion 2: 1131234561</span><br/>
+                        <span>Opcion 3: 02234561234</span><br/> 
+                        <span>Opcion 4: 0223-456-1234</span><br/><br/>
+                        <span>Se permite el uso de parentesis y guiones</span>        
+                    </div>            
+                })
                 return false
            }
 
