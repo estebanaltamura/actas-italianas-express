@@ -43,7 +43,7 @@ export const useLoginValidator = (e)=>{
             } 
 
             if(!digitRegExpNumerosGuiones.test(cadena)){
-                setPhoneAlert("Solo numeros y/o guiones")
+                setPhoneAlert("Solo numeros, guiones y/o parantesis")
                 return false
             } 
             
@@ -70,8 +70,9 @@ export const useLoginValidator = (e)=>{
                     cancelButtonText: 'ok',
                     html: <div>
                         <h4>Formatos aceptados</h4><br/>
-                        <span>Opcion 1: 113-123-4561</span><br/>
+                        <span>Opcion 1: 1131234561</span><br/>
                         <span>Opcion 2: (113)-123-4561</span><br/>
+                        <span>Opcion 3: 113-123-4561</span><br/>
                         <span>Opcion 3: 1131234561</span><br/>
                         <span>Opcion 4: 02234561234</span><br/> 
                         <span>Opcion 5: (0223)-456-1234</span><br/>
@@ -90,10 +91,13 @@ export const useLoginValidator = (e)=>{
                     cancelButtonText: 'ok',
                     html: <div>
                         <h4>Formatos aceptados</h4><br/>
-                        <span>Opcion 1: 113-123-4561</span><br/>
-                        <span>Opcion 2: 1131234561</span><br/>
-                        <span>Opcion 3: 02234561234</span><br/> 
-                        <span>Opcion 4: 0223-456-1234</span><br/><br/>
+                        <span>Opcion 1: 1131234561</span><br/>
+                        <span>Opcion 2: (113)-123-4561</span><br/>
+                        <span>Opcion 3: 113-123-4561</span><br/>
+                        <span>Opcion 3: 1131234561</span><br/>
+                        <span>Opcion 4: 02234561234</span><br/> 
+                        <span>Opcion 5: (0223)-456-1234</span><br/>
+                        <span>Opcion 6: 0223-456-1234</span><br/><br/>
                         <span>Se permite el uso de parentesis y guiones</span>        
                     </div>            
                 })
