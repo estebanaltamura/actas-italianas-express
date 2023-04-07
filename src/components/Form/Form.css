@@ -105,5 +105,5 @@ input:focus-visible {
 }
 
 input::placeholder{
-    font-size: 13px;
+    font-size: 14px;
 }
