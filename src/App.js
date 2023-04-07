@@ -11,10 +11,10 @@ function App() {
   const whatsappIcon = useRef()
 
   const mostrarIconoWhatsapp = ()=>{
-    const scrollPercent = window.scrollY/(document.documentElement.scrollHeight - document.documentElement.clientHeight)
+    const scrollPercent = window.scrollY/(document.documentElement.clientHeight)
 
-    console.log(scrollPercent > 0.50)
-    scrollPercent > 0.50 && whatsappIcon.current.classList.replace("hidden", "whatsappLink")
+    console.log(scrollPercent)
+    scrollPercent > 0.18 && whatsappIcon.current.classList.replace("hidden", "whatsappLink")
   }
 
   useEffect(() => {
