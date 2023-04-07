@@ -97,3 +97,13 @@ input:focus-visible {
     width: 20px;
     height: 20px;
 }
+
+.inputPhoneHelp{
+    position: absolute;
+    top: 34px;
+    right: -3px;
+}
+
+input::placeholder{
+    font-size: 13px;
+}

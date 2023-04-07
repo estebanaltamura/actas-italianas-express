@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { useLoginValidator } from "./useLoginValidator";
+import { TbHelp } from "react-icons/tb";
 
 
 import "./Form.css"
@@ -17,6 +18,27 @@ export const Form = ()=>{
     const mailValueInput = useRef()
     const submit = useRef()
     const history = useNavigate()
+
+
+    const inputPhoneHelpClickHandler = ()=>{
+        MySwal.fire({
+            showConfirmButton: false,
+            showCancelButton: true,
+            cancelButtonText: 'ok',
+            html: <div>
+                      <h4>Formatos aceptados</h4>
+                                               
+                        <span>Opcion 1: 1131234561</span><br/>
+                        <span>Opcion 2: (113)-123-4561</span><br/>
+                        <span>Opcion 3: 113-123-4561</span><br/>
+                        <span>Opcion 3: 1131234561</span><br/>
+                        <span>Opcion 4: 02234561234</span><br/> 
+                        <span>Opcion 5: (0223)-456-1234</span><br/>
+                        <span>Opcion 6: 0223-456-1234</span><br/><br/>
+                        <span>Se permite el uso de parentesis y guiones</span>        
+                    </div>            
+            })
+    }
 
     const onSubmitHandler = (e)=>{
         e.preventDefault()
@@ -34,7 +56,7 @@ export const Form = ()=>{
         const indexFirstValidNumber = phoneValueHandled.findIndex(element=> element !== "0")
 
         const phoneValueHandled2 = "+549" + phoneValueHandled.slice(indexFirstValidNumber).join("")
-        console.log(phoneValueHandled2)
+        console.log(phoneValueHandled2, phoneValueHandled2.length)
 
         fullNameValidator(fullNameValue)
         telephoneValidator(phoneValueHandled2)
@@ -68,20 +90,20 @@ export const Form = ()=>{
                                 
                                     <div className="inputContainer">
                                         <span className="subtitle">NOMBRE:</span>
-                                        <input ref={fullNameValueInput} autoComplete="off" type="text" name="fullName" onKeyUp={resetAlerts}/>
+                                        <input placeholder="Ingrese su nombre completo" ref={fullNameValueInput} autoComplete="off" type="text" name="fullName" onKeyUp={resetAlerts}/>
                                         <span className="inputAlerts">{fullNameAlert}</span>
                                     </div>
 
                                     <div className="inputContainer">
                                         <span className="subtitle">WHATSAPP:</span>  
-                                        <input ref={phoneValueInput} autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts}/>
-                                        
+                                        <input placeholder="Ingrese su Whatsapp Ejemplo 113-859-7894" ref={phoneValueInput} autoComplete="off" type="text" name="phone" onKeyUp={resetAlerts}/>
+                                        <TbHelp onClick={inputPhoneHelpClickHandler} className="inputPhoneHelp" />
                                         <span className="inputAlerts">{phoneAlert}</span>
                                     </div>
                                     
                                     <div className="inputContainer">
                                         <span className="subtitle">MAIL:</span>  
-                                        <input ref={mailValueInput} autoComplete="off" type="text" name="mail" onKeyUp={resetAlerts}/>
+                                        <input placeholder="Ingrese su e-mail Ejemplo mail@mail.com" ref={mailValueInput} autoComplete="off" type="text" name="mail" onKeyUp={resetAlerts}/>
                                         <span className="inputAlerts">{mailAlert}</span>
                                     </div>
                                     

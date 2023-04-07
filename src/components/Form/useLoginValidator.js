@@ -14,104 +14,51 @@ export const useLoginValidator = (e)=>{
         const digitRegExp = /\d/
         if(digitRegExp.test(fullName)){
             setFullNameAlert("Solo ingrese letras. Numeros no permitidos")
+            return false
         } 
 
         const isThereTwoWords = /\w+\s*\w+/
         if(!isThereTwoWords.test(fullName)){
             setFullNameAlert("Por favor inserte nombre completo")
+            return false
         } 
 
-        else return true
+        return true
     }
     
-    const telephoneValidator = (str)=> {
-        const stringSinEspacios = str.replaceAll(" ", "")
-
-        const regExpCheck = (cadena)=>{
+    const telephoneValidator = (cadena)=> {
+        console.log(cadena)
+        const digitRegExpVacia = /^$/
+        const digitRegExpNumerosGuiones = /^[\d-()+]*$/
+        //const digitRegExpComienza = /^\d/
+        //const digitRegExpTermina = /\d+$/
+        //const digitRegExpGuiones = /--/
             
-            const digitRegExpVacia = /^$/
-            const digitRegExpNumerosGuiones = /^[\d-]*$/
-            const digitRegExpComienza = /^\d/
-            const digitRegExpTermina = /\d+$/
-            const digitRegExpGuiones = /--/
+        if(digitRegExpVacia.test(cadena)){
+            setPhoneAlert("Ingrese un numero de whatsapp")
+            return false
+        } 
+
+        if(!digitRegExpNumerosGuiones.test(cadena)){
+            console.log(cadena)
+            setPhoneAlert("Solo numeros, guiones y/o parantesis")
+            return false
+        } 
             
             
-            
-            if(digitRegExpVacia.test(cadena)){
-                setPhoneAlert("Ingrese un numero de whatsapp")
-                return false
-            } 
-
-            if(!digitRegExpNumerosGuiones.test(cadena)){
-                setPhoneAlert("Solo numeros, guiones y/o parantesis")
-                return false
-            } 
-            
-            if(!digitRegExpComienza.test(cadena)){
-                setPhoneAlert("Debe comenzar con un numero")
-                return false
-            } 
-            
-            if(!digitRegExpTermina.test(cadena)){
-                setPhoneAlert("Debe terminar con un numero")
-                return false
-            } 
-
-            if(digitRegExpGuiones.test(cadena)){
-                setPhoneAlert("No debe haber dos guiones juntos")
-                return false
-            } 
-
-            if(cadena.length > 10){
-                 setPhoneAlert("Ingreso numeros de mas")
-                 MySwal.fire({
-                    showConfirmButton: false,
-                    showCancelButton: true,
-                    cancelButtonText: 'ok',
-                    html: <div>
-                        <h4>Formatos aceptados</h4>
-                        <h5>(Ingreso numeros de mas)</h5><br/>                        
-                        <span>Opcion 1: 1131234561</span><br/>
-                        <span>Opcion 2: (113)-123-4561</span><br/>
-                        <span>Opcion 3: 113-123-4561</span><br/>
-                        <span>Opcion 3: 1131234561</span><br/>
-                        <span>Opcion 4: 02234561234</span><br/> 
-                        <span>Opcion 5: (0223)-456-1234</span><br/>
-                        <span>Opcion 6: 0223-456-1234</span><br/><br/>
-                        <span>Se permite el uso de parentesis y guiones</span>        
-                    </div>            
-                })
-                 return false
-            }
-
-            if(cadena.length < 10){
-                setPhoneAlert("Ingreso numeros de menos")
-                MySwal.fire({
-                    showConfirmButton: false,
-                    showCancelButton: true,
-                    cancelButtonText: 'ok',
-                    html: <div>
-                        <h4>Formatos aceptados</h4>
-                        <h5>(Ingreso numeros de menos)</h5><br/> 
-                        <span>Opcion 1: 1131234561</span><br/>
-                        <span>Opcion 2: (113)-123-4561</span><br/>
-                        <span>Opcion 3: 113-123-4561</span><br/>
-                        <span>Opcion 3: 1131234561</span><br/>
-                        <span>Opcion 4: 02234561234</span><br/> 
-                        <span>Opcion 5: (0223)-456-1234</span><br/>
-                        <span>Opcion 6: 0223-456-1234</span><br/><br/>
-                        <span>Se permite el uso de parentesis y guiones</span>        
-                    </div>            
-                })
-                return false
-           }
-
+        if(cadena.length > 14){
+            setPhoneAlert("Ingreso numeros de mas")            
+        return false
         }
 
+           
+        if(cadena.length < 14){
+            setPhoneAlert("Ingreso numeros de menos")            
+        return false
+        }   
         
-        if (regExpCheck(stringSinEspacios) !== false){
-            return true 
-        }                 
+        return true
+        
     }
     
     
