@@ -2,15 +2,33 @@ import { Form } from './components/Form/Form';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { Link } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 
 import './App.css';
 
 function App() {
 
+  const whatsappIcon = useRef()
+
+  const mostrarIconoWhatsapp = ()=>{
+    const scrollPercent = window.scrollY/(document.documentElement.scrollHeight - document.documentElement.clientHeight)
+
+    console.log(scrollPercent > 0.50)
+    scrollPercent > 0.50 && whatsappIcon.current.classList.replace("hidden", "whatsappLink")
+  }
+
+  useEffect(() => {
+      window.addEventListener('scroll', mostrarIconoWhatsapp);
+    return () => {
+      window.removeEventListener('scroll', mostrarIconoWhatsapp);
+    };
+  }, []);
+
+
   return (
     <div className="App">
       <Header />
-      <Link to="https://wa.me/+5491127704684?text=Saludos.%20Estoy%20interestedo%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad."><img className="whatsappLink" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/></Link>
+      <Link to="https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad."><img ref={whatsappIcon} className="hidden" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/></Link>
       
       {
       window.innerWidth < 768 ? 

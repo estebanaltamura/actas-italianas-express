@@ -125,6 +125,11 @@ p{
 }
 
 .whatsappLink{
+  animation-name: whatsappIconAnimation;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+  
   position: fixed;
   bottom: 150px;
   right: 18px;
@@ -132,6 +137,35 @@ p{
   height: 70px;
   z-index: 1;
 }
+
+@keyframes whatsappIconAnimation {
+  0% {
+    width: 70px;
+    height: 70px;
+  }
+  5% {
+    width: 73px;
+    height: 73px;
+  }
+  10% {
+    width: 70px;
+    height: 70px;
+  }
+  15% {
+    width: 73px;
+    height: 73px;
+  }
+  20% {
+    width: 70px;
+    height: 70px;
+  }
+  100% {
+    width: 70px;
+    height: 70px;
+  }
+
+}
+
 
 @media screen and (min-width: 768px){
   .homeContainer{
