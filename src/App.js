@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Link to="https://wa.me/+5491127704684?text=I'm%20interested%20in%20your%20car%20for%20sale"><img className="whatsappLink" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/></Link>
+      <Link to="https://wa.me/+5491127704684?text=Estoy%20interestedo%20en%20el%20servicio."><img className="whatsappLink" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/></Link>
       
       {
       window.innerWidth < 768 ? 
