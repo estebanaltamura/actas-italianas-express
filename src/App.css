@@ -127,7 +127,7 @@ p{
 .whatsappLink{
   animation-name: whatsappIconAnimation, fadeIn;
   animation-duration: 4s, 0.5s;
-  animation-delay: 3s, 0s;
+  animation-delay: 4s, 0s;
   animation-iteration-count: infinite, 1;
   
   position: fixed;
