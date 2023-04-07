@@ -125,10 +125,10 @@ p{
 }
 
 .whatsappLink{
-  animation-name: whatsappIconAnimation;
-  animation-duration: 4s;
-  animation-delay: 3s;
-  animation-iteration-count: infinite;
+  animation-name: whatsappIconAnimation, fadeIn;
+  animation-duration: 4s, 0.3s;
+  animation-delay: 3s, 0s;
+  animation-iteration-count: infinite, 1;
   
   position: fixed;
   bottom: 150px;
@@ -136,6 +136,15 @@ p{
   width: 70px;
   height: 70px;
   z-index: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes whatsappIconAnimation {
