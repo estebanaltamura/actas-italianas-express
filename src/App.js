@@ -14,7 +14,7 @@ function App() {
     const scrollPercent = window.scrollY/(document.documentElement.clientHeight)
 
     console.log(scrollPercent)
-    scrollPercent > 0.18 && whatsappIcon.current.classList.replace("hidden", "whatsappLink")
+    scrollPercent > 0.70 && whatsappIcon.current.classList.replace("hidden", "whatsappLink")
   }
 
   useEffect(() => {
