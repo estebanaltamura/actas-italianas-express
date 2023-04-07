@@ -1,6 +1,7 @@
 import { Form } from './components/Form/Form';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import { Link } from 'react-router-dom';
 
 import './App.css';
 
@@ -9,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <img className="whatsappLink" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/>
+      <Link to="https://wa.me/+5491127704684?text=I'm%20interested%20in%20your%20car%20for%20sale"><img className="whatsappLink" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/></Link>
       
       {
       window.innerWidth < 768 ? 

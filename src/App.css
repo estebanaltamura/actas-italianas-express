@@ -130,7 +130,7 @@ p{
   right: 18px;
   width: 70px;
   height: 70px;
-  
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px){
