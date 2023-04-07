@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <img className="whatsappLink" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/>
       
       {
       window.innerWidth < 768 ? 

@@ -96,7 +96,7 @@ export const Form = ()=>{
 
                                     <div className="inputContainer">
                                         <span className="subtitle">WHATSAPP:</span>  
-                                        <input placeholder="Ingrese su Whatsapp Ejemplo 113-859-7894" ref={phoneValueInput} autoComplete="off" type="number" name="phone" onKeyUp={resetAlerts}/>
+                                        <input placeholder="Ingrese su Whatsapp Ejemplo 113 859 7894" ref={phoneValueInput} autoComplete="off" type="number" name="phone" onKeyUp={resetAlerts}/>
                                         <TbHelp onClick={inputPhoneHelpClickHandler} className="inputPhoneHelp" />
                                         <span className="inputAlerts">{phoneAlert}</span>
                                     </div>

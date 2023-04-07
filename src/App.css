@@ -124,6 +124,14 @@ p{
   font-weight: 700;
 }
 
+.whatsappLink{
+  position: fixed;
+  bottom: 40px;
+  right: 10%;
+  width: 70px;
+  height: 70px;
+}
+
 @media screen and (min-width: 768px){
   .homeContainer{
     max-width: 900px;
@@ -139,3 +147,4 @@ p{
 
   }
 }
+
