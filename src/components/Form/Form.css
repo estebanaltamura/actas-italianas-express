@@ -101,7 +101,7 @@ input:focus-visible {
 .inputPhoneHelp{
     position: absolute;
     top: 34px;
-    right: -3px;
+    right: 0px;
 }
 
 input::placeholder{
