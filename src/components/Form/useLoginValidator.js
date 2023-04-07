@@ -29,7 +29,7 @@ export const useLoginValidator = (e)=>{
     const telephoneValidator = (cadena)=> {
         console.log(cadena)
         const digitRegExpVacia = /^$/
-        const digitRegExpNumerosGuiones = /^[\d-()+]*$/
+        const digitRegExpNumerosGuiones = /^[\d-+]*$/
         //const digitRegExpComienza = /^\d/
         //const digitRegExpTermina = /\d+$/
         //const digitRegExpGuiones = /--/
@@ -41,7 +41,7 @@ export const useLoginValidator = (e)=>{
 
         if(!digitRegExpNumerosGuiones.test(cadena)){
             console.log(cadena)
-            setPhoneAlert("Solo numeros, guiones y/o parantesis")
+            setPhoneAlert("Solo numeros y/o guiones")
             return false
         } 
             
