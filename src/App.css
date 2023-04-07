@@ -126,10 +126,11 @@ p{
 
 .whatsappLink{
   position: fixed;
-  bottom: 40px;
-  right: 10%;
+  bottom: 25px;
+  right: 25px;
   width: 70px;
   height: 70px;
+  box-shadow: 2px 2px 2px 2px #6c6c6c;
 }
 
 @media screen and (min-width: 768px){
