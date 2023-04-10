@@ -1,20 +1,19 @@
 .mensajeGraciasContainer{
     display: flex;
-    flex-direction: column;
+    
+    
     width: 100%;
     height: 100vh;
     justify-content: center;
 }
 
 
-.mensajeGracias{ 
-    text-align: center;   
-    margin: auto;   
-}
+
 .buttonsContainer{
+    margin: 200px;
     width: fit-content;
     height: fit-content;
-    margin: auto;
+    
 }
 
 
