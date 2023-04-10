@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { BsChevronLeft } from "react-icons/bs";
 import "./GraciasPorSuConsulta.css"
 
 export const GraciasPorSuConsulta = ()=> {
@@ -7,12 +8,20 @@ export const GraciasPorSuConsulta = ()=> {
     const history = useNavigate()
 
     useEffect(()=>{
-        setTimeout(()=>{history("/")},2500)
+        setTimeout(()=>{history("/")},135500)
     },[])
 
     return(
         <div className="mensajeGraciasContainer">
-            <h1 className="mensajeGracias">Gracias por su consulta. En maximo 24 horas horas nos pondremos en contacto</h1>
+            
+            <button className="chatButton">
+                Chatear ahora
+                <img className="chatAhoraIcon" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/>
+            </button>
+            <button className="volverButton">
+                Volver
+                <BsChevronLeft className="volverIcon" />
+            </button>
         </div>
     )
 }

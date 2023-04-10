@@ -1,10 +1,11 @@
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { useLoginValidator } from "./useLoginValidator";
 import { TbHelp } from "react-icons/tb";
+import { isLoadingContext } from "../../Contexts/IsLoadingContext";
 
 
 import "./Form.css"
@@ -18,6 +19,7 @@ export const Form = ()=>{
     const mailValueInput = useRef()
     const submit = useRef()
     const history = useNavigate()
+    const {isLoading, setIsLoading} = useContext(isLoadingContext)
 
 
     const inputPhoneHelpClickHandler = ()=>{
@@ -62,15 +64,18 @@ export const Form = ()=>{
         telephoneValidator(phoneValueHandled2)
         mailValidator(mailValue)
         
-        if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValue) && mailValidator(mailValue)){
+        if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValueHandled2) && mailValidator(mailValue)){
+        //setIsLoading(true)
         const db = getFirestore()
         const queryCollection = collection(db, "Leads")              
         
         addDoc(queryCollection, {fullname: fullNameValue,  phoneNumber: phoneValueHandled2, email: mailValue, date: date, cumplimentada: false}).then(res=>{
+                    
                     fullNameValueInput.current.value = ""
                     phoneValueInput.current.value = ""
                     mailValueInput.current.value = ""
-                    submit.current.setAttribute("disabled", "true");
+                    submit.current.setAttribute("disabled", "true");                    
+                    //setIsLoading(false)
                     history("/graciasPorSuConsulta")
                 }).catch(error=>{                     
                     console.log(error)
