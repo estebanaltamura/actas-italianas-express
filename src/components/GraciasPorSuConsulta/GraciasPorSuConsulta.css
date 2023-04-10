@@ -54,6 +54,9 @@
     font-weight: 700;
 }
 
+.chatButton:hover{
+    color: white !important;
+}
 .chatButton:visited{
     color: white !important;
 }
@@ -82,6 +85,10 @@
     transition: all 1s;
     font-size: 20px;
     font-weight: 900;   
+}
+
+.volverButton:hover{
+    color: #384d56 !important;
 }
 
 .volverButton:visited{
