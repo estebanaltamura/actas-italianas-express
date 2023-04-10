@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { BsChevronLeft } from "react-icons/bs";
 import { Header } from "../Header/Header"; 
 import { Footer } from "../Footer/Footer";
@@ -19,14 +19,14 @@ export const GraciasPorSuConsulta = ()=> {
             <div className="mensajeGraciasContainer">
                 <div className="buttonsContainer">
 
-                    <button className="chatButton">
+                    <Link to="https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad." className="chatButton">
                         Chatear ahora
                         <img className="chatAhoraIcon" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/>
-                    </button>
-                    <button className="volverButton">
+                    </Link>
+                    <Link to="/home" className="volverButton">
                         Volver
                         <BsChevronLeft className="volverIcon" />
-                    </button>
+                    </Link>
                 </div>
             </div>
             <Footer />
