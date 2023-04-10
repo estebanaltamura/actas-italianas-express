@@ -21,15 +21,15 @@ h1, h2, h3, h4, h5, h5, p{
 a{
   cursor: pointer;
   color: black;
+  text-decoration: none;
 }
 
 a:visited{
-  color: white;
+  
+  text-decoration: none;
 }
 
-a:hover{
-  color: #499e9b
-}
+
 
 
 .homeContainer{
