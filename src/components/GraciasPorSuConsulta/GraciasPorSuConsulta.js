@@ -10,8 +10,10 @@ export const GraciasPorSuConsulta = ()=> {
     const history = useNavigate()
     const mensajeGraciasContainer = useRef()
 
+    const height = document.documentElement.clientHeight
+        const height2 = window.innerHeight
     useEffect(()=>{
-        const height = document.documentElement.clientHeight
+        
         mensajeGraciasContainer.current.setAttribute("height", height)
         setTimeout(()=>{history("/")},135500)
 
@@ -23,7 +25,8 @@ export const GraciasPorSuConsulta = ()=> {
             <div ref={mensajeGraciasContainer} className="mensajeGraciasContainer">
             <Header />
                 <div className="buttonsContainer">
-
+                    <h2>{height}</h2>
+                    <h2>{height2}</h2>
                     <Link to="https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad." className="chatButton">
                         Chatear ahora
                         <img className="chatAhoraIcon" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/>
