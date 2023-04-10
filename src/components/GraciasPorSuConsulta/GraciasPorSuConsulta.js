@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { BsChevronLeft } from "react-icons/bs";
 import { Header } from "../Header/Header"; 
@@ -8,15 +8,19 @@ import "./GraciasPorSuConsulta.css"
 export const GraciasPorSuConsulta = ()=> {
 
     const history = useNavigate()
+    const mensajeGraciasContainer = useRef()
 
     useEffect(()=>{
+        const height = window.innerHeight
+        mensajeGraciasContainer.current.setAttribute("height", height)
         setTimeout(()=>{history("/")},135500)
+
     },[])
 
     return(
         <>
             
-            <div className="mensajeGraciasContainer">
+            <div ref={mensajeGraciasContainer} className="mensajeGraciasContainer">
             <Header />
                 <div className="buttonsContainer">
 
