@@ -15,8 +15,9 @@ export const GraciasPorSuConsulta = ()=> {
 
     return(
         <>
-            <Header />
+            
             <div className="mensajeGraciasContainer">
+            <Header />
                 <div className="buttonsContainer">
 
                     <Link to="https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad." className="chatButton">
@@ -29,7 +30,8 @@ export const GraciasPorSuConsulta = ()=> {
                     </Link>
                 </div>
             </div>
-            <Footer />
+            <Footer className="footerGracias"/>
+            
         </>
     )
 }
