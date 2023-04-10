@@ -75,18 +75,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    border: 1px solid #384d56;
-    border-radius: 8px;
-    box-shadow: 3px 3px 4px 0px #6c6c6c;
+    cursor: pointer;    
     background: white;
     color: #384d56;
     margin-top: 20px;
-    width: 320px;
+    width: 150px;
     height: 66px;
     transition: all 1s;
     font-size: 20px;
     font-weight: 900;
+   
 }
 
 .volverButton:visited{
@@ -97,10 +95,10 @@
 
 .volverIcon{
     position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 13px;
-    left: 25px;
+    width: 23px;
+    height: 23px;
+    top: 23px;
+    left: 20px;
 }
 
  
