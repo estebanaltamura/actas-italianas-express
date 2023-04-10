@@ -55,7 +55,7 @@
 }
 
 .chatButton:visited{
-    color: white;
+    color: white !important;
 }
   
 
@@ -85,7 +85,7 @@
 }
 
 .volverButton:visited{
-    color: #384d56;
+    color: #384d56 !important;
 }
 
 
