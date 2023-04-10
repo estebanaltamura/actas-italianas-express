@@ -11,7 +11,7 @@ export const GraciasPorSuConsulta = ()=> {
     const mensajeGraciasContainer = useRef()
 
     useEffect(()=>{
-        const height = window.innerHeight
+        const height = document.documentElement.clientHeight
         mensajeGraciasContainer.current.setAttribute("height", height)
         setTimeout(()=>{history("/")},135500)
 
