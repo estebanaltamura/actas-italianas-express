@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { BsChevronLeft } from "react-icons/bs";
 import { Header } from "../Header/Header"; 
-import { Footer } from "../Footer/Footer";
+import { FooterGracias } from "../Footer/FooterGracias";
 import "./GraciasPorSuConsulta.css"
 
 export const GraciasPorSuConsulta = ()=> {
@@ -30,7 +30,7 @@ export const GraciasPorSuConsulta = ()=> {
                     </Link>
                 </div>
             </div>
-            <Footer className="footerGracias"/>
+            <FooterGracias />
             
         </>
     )
