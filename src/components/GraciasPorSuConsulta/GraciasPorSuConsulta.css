@@ -10,9 +10,9 @@
 
 
 .buttonsContainer{
-    margin: 200px;
+    margin: 60% auto 0 auto;
     width: fit-content;
-    height: fit-content;
+    height:max-content;
     
 }
 
