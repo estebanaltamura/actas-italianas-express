@@ -13,15 +13,17 @@ export const GraciasPorSuConsulta = ()=> {
 
     return(
         <div className="mensajeGraciasContainer">
-            
-            <button className="chatButton">
-                Chatear ahora
-                <img className="chatAhoraIcon" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/>
-            </button>
-            <button className="volverButton">
-                Volver
-                <BsChevronLeft className="volverIcon" />
-            </button>
+            <div className="buttonsContainer">
+
+                <button className="chatButton">
+                    Chatear ahora
+                    <img className="chatAhoraIcon" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/>
+                </button>
+                <button className="volverButton">
+                    Volver
+                    <BsChevronLeft className="volverIcon" />
+                </button>
+            </div>
         </div>
     )
 }
