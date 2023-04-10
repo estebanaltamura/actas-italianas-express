@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { BsChevronLeft } from "react-icons/bs";
 import { Header } from "../Header/Header"; 
+import { Footer } from "../Footer/Footer";
 import "./GraciasPorSuConsulta.css"
 
 export const GraciasPorSuConsulta = ()=> {
@@ -28,6 +29,7 @@ export const GraciasPorSuConsulta = ()=> {
                     </button>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }
