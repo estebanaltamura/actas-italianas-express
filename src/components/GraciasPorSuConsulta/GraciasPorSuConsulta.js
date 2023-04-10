@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { BsChevronLeft } from "react-icons/bs";
 import { Header } from "../Header/Header"; 
 import { FooterGracias } from "../Footer/FooterGracias";
@@ -7,22 +6,10 @@ import "./GraciasPorSuConsulta.css"
 
 export const GraciasPorSuConsulta = ()=> {
 
-    const history = useNavigate()
-    const mensajeGraciasContainer = useRef()
-
-    const height = document.documentElement.clientHeight
-        const height2 = window.innerHeight
-    useEffect(()=>{
-        
-        mensajeGraciasContainer.current.setAttribute("height", height)
-        setTimeout(()=>{history("/")},135500)
-
-    },[])
-
     return(
         <>
             
-            <div ref={mensajeGraciasContainer} className="mensajeGraciasContainer">
+            <div className="mensajeGraciasContainer">
             <Header />
                 <h4 className="loConactaremosmessage">En menos de 24 horas nos contactaremos con usted</h4>
                 

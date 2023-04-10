@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 import { GraciasPorSuConsulta } from './components/GraciasPorSuConsulta/GraciasPorSuConsulta';
 import { IsLoadingContext } from './Contexts/IsLoadingContext';
+import { FormularioWhatsapp } from './components/FormularioWhatsapp/FormularioWhatsapp';
 
 initFireBase()
 
@@ -18,6 +19,7 @@ root.render(
           <Route path="*" element = {<App />}/>
           <Route path="/home" element = {<App />}/>
           <Route path="/graciasPorSuConsulta" element = {<GraciasPorSuConsulta />}/>        
+          <Route path="/chatearConUnOperador" element = {<FormularioWhatsapp />}/>    
         </Routes>
       </IsLoadingContext>
     </BrowserRouter>
