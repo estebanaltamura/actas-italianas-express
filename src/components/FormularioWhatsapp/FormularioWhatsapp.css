@@ -8,8 +8,9 @@
 }
 
 .chatearPageMessage{
-    margin: 15px auto;
+    margin: 20px auto;
     text-align: center;
     color: #63BEE6;
+    font-weight: 700;
 
 }
