@@ -113,7 +113,7 @@ export const FormWhatsapp = ()=>{
                                         <span className="inputAlerts">{mailAlert}</span>
                                     </div>
                                     <button ref={submit} type="submit"  className="chatButtonChatear">
-                                        <img className="helpIconChatear" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/>
+                                        <img className="iconWhatsappChatear" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/>
                                         CHATEA AHORA
                                     </button>
                                 </form>
