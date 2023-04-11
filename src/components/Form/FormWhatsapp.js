@@ -76,7 +76,7 @@ export const FormWhatsapp = ()=>{
                     mailValueInput.current.value = ""
                     submit.current.setAttribute("disabled", "true");                    
                     //setIsLoading(false)
-                    window.location.href = 'https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad."><img ref={whatsappIcon} className="hidden" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png'
+                    window.location.href = 'https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.'
           
                 }).catch(error=>{                     
                     console.log(error)
