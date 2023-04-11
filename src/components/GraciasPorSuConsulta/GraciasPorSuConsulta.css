@@ -17,7 +17,7 @@
     width: fit-content;
     height: 222px;
     align-items: center;
-    margin-top: 100px;
+    margin: 100px auto 0 auto;
 
     
 }
@@ -26,6 +26,7 @@
     text-align: center;
     font-weight: 700;
     height: 50px;
+    font-size: 22px;
     color: #63BEE6
 }
 
@@ -33,6 +34,7 @@
     width: 320px;
     margin: 40px auto 0 auto;
     text-align: center;
+    font-weight: 700;
 }
 
 .chatButton {
