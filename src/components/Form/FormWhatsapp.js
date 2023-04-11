@@ -1,4 +1,5 @@
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc, updateDoc } from "firebase/firestore";
+
 import { useNavigate } from "react-router-dom";
 import { useRef, useContext } from "react";
 import Swal from 'sweetalert2'
@@ -42,7 +43,7 @@ export const FormWhatsapp = ()=>{
             })
     }
 
-    const onSubmitHandler = (e)=>{
+    const onSubmitHandler = async(e)=>{
         e.preventDefault()
 
         const fullNameValue = e.target.fullName.value
@@ -67,17 +68,24 @@ export const FormWhatsapp = ()=>{
         if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValueHandled2) && mailValidator(mailValue)){
         //setIsLoading(true)
         const db = getFirestore()
-        const queryCollection = collection(db, "Leads")              
         
-        addDoc(queryCollection, {fullname: fullNameValue,  phoneNumber: phoneValueHandled2, email: mailValue, date: date, cumplimentada: false}).then(res=>{
-                    
+        const queryDoc = doc(db, "UltimoNumeroDeContacto", "E9mEVykIO4N7719I6dh3")
+        const ultimoNumeroDeContacto1 = await getDoc(queryDoc)
+        const ultimoNumeroDeContacto2 = ultimoNumeroDeContacto1.data().ultimoNumero
+        const ultimoNumeroMasUno = ultimoNumeroDeContacto2 + 1
+        await updateDoc(queryDoc, {ultimoNumero: ultimoNumeroMasUno})             
+        
+        const docRef = doc(db, "LeadsParaAgendar", `${ultimoNumeroMasUno} - ${fullNameValue}`)
+
+        //addDoc(queryCollection, {fullname: fullNameValue,  phoneNumber: phoneValueHandled2, email: mailValue, date: date, cumplimentada: false}).then(res=>{
+        setDoc(docRef, {fullname: `${ultimoNumeroMasUno} - ${fullNameValue}`,  phoneNumber: phoneValueHandled2, email: mailValue, date: date, cumplimentada: false}).then(res=>{        
                     fullNameValueInput.current.value = ""
                     phoneValueInput.current.value = ""
                     mailValueInput.current.value = ""
                     submit.current.setAttribute("disabled", "true");                    
                     //setIsLoading(false)
                     window.location.href = 'https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.'
-          
+
                 }).catch(error=>{                     
                     console.log(error)
                     MySwal.fire("No pudimos procesar su orden. Intente nuevamente")

@@ -1,4 +1,4 @@
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, setDoc, doc, getDoc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { useRef, useContext } from "react";
 import Swal from 'sweetalert2'
@@ -42,7 +42,7 @@ export const Form = ()=>{
             })
     }
 
-    const onSubmitHandler = (e)=>{
+    const onSubmitHandler = async(e)=>{
         e.preventDefault()
 
         const fullNameValue = e.target.fullName.value
@@ -67,10 +67,17 @@ export const Form = ()=>{
         if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValueHandled2) && mailValidator(mailValue)){
         //setIsLoading(true)
         const db = getFirestore()
-        const queryCollection = collection(db, "Leads")              
         
-        addDoc(queryCollection, {fullname: fullNameValue,  phoneNumber: phoneValueHandled2, email: mailValue, date: date, cumplimentada: false}).then(res=>{
-                    
+        const queryDoc = doc(db, "UltimoNumeroDeContacto", "E9mEVykIO4N7719I6dh3")
+        const ultimoNumeroDeContacto1 = await getDoc(queryDoc)
+        const ultimoNumeroDeContacto2 = ultimoNumeroDeContacto1.data().ultimoNumero
+        const ultimoNumeroMasUno = ultimoNumeroDeContacto2 + 1
+        await updateDoc(queryDoc, {ultimoNumero: ultimoNumeroMasUno})             
+        
+        const docRef = doc(db, "LeadsParaAgendar", `${ultimoNumeroMasUno} - ${fullNameValue}`)
+
+        //addDoc(queryCollection, {fullname: fullNameValue,  phoneNumber: phoneValueHandled2, email: mailValue, date: date, cumplimentada: false}).then(res=>{
+        setDoc(docRef, {fullname: `${ultimoNumeroMasUno} - ${fullNameValue}`,  phoneNumber: phoneValueHandled2, email: mailValue, date: date, cumplimentada: false}).then(res=>{        
                     fullNameValueInput.current.value = ""
                     phoneValueInput.current.value = ""
                     mailValueInput.current.value = ""
