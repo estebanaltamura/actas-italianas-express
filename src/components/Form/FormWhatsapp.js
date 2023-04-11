@@ -91,7 +91,7 @@ export const FormWhatsapp = ()=>{
     return(
             <>                
                         <div className="loginContainer"> 
-                            <div className="form-container"> 
+                            <div className="form-containerWhatsapp"> 
                                 <form action="/action_page.php" onSubmit={onSubmitHandler}> 
                                 
                                     <div className="inputContainer">
