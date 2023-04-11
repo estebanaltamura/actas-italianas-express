@@ -3,7 +3,7 @@
     max-width: 620px;
     height: fit-content;
     margin: 0 auto;
-    
+
     
     
 }
@@ -14,9 +14,7 @@
     height: 405px;
     padding: 40px;
     background: white;
-    border: 1px solid #6c6c6c;
-    border-radius: 12px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);  
+    
 }
 
 form{
