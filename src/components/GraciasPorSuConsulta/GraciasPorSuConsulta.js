@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { BsChevronLeft } from "react-icons/bs";
 import { Header } from "../Header/Header"; 
-import { FooterGracias } from "../Footer/FooterGracias";
+import { Footer } from "../Footer/Footer";
 import "./GraciasPorSuConsulta.css"
 
 export const GraciasPorSuConsulta = ()=> {
@@ -25,7 +25,7 @@ export const GraciasPorSuConsulta = ()=> {
                     </Link>
                 </div>
             </div>
-            <FooterGracias />
+            <Footer />
             
         </>
     )
