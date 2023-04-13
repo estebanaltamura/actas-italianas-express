@@ -52,13 +52,31 @@ export const Form = ()=>{
         const date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric", hour: "2-digit", minute: "2-digit"})
         
         const phoneValueHandled = [...phoneValue].filter(element => {
-            return (element !== " " && element !== "-" && element !== "(" && element !== ")")  && element
+            return (/\d/.test(element) && element !== " ")  && element
         });
 
-        const indexFirstValidNumber = phoneValueHandled.findIndex(element=> element !== "0")
+        console.log("filtrado digitos", phoneValueHandled)
+        let indexFirstValidNumber
+        if (/^0/.test(phoneValueHandled.join(""))){
+            console.log(0)
+            indexFirstValidNumber = phoneValueHandled.findIndex(element=> element !== "0")
+        }
+        else if (/^549/.test(phoneValueHandled.join(""))){
+            console.log("549")
+            indexFirstValidNumber = 3
+        }
+        else if (/^54/.test(phoneValueHandled.join(""))){
+            console.log("54")
+            indexFirstValidNumber = 2
+        }
+        else if (/^9/.test(phoneValueHandled.join(""))){
+            console.log("9")
+            indexFirstValidNumber = 1
+        }
+        
 
         const phoneValueHandled2 = "+549" + phoneValueHandled.slice(indexFirstValidNumber).join("")
-        console.log(phoneValueHandled2, phoneValueHandled2.length)
+        //console.log(phoneValueHandled2, phoneValueHandled2.length)
 
         fullNameValidator(fullNameValue)
         telephoneValidator(phoneValueHandled2)
