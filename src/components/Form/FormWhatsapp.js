@@ -72,10 +72,16 @@ export const FormWhatsapp = ()=>{
         }
         
         const phoneValueHandled2 = "+549" + phoneValueHandled.slice(indexFirstValidNumber).join("")
+        
+        const mailValue2 = [...mailValue].filter(element => {
+            return element !== " " && element
+        });
+
+        const mailValue3 = mailValue2.join("")
 
         fullNameValidator(fullNameValue)
         telephoneValidator(phoneValueHandled2)
-        mailValidator(mailValue)
+        mailValidator(mailValue3)
         
         if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValueHandled2) && mailValidator(mailValue)){
         //setIsLoading(true)
@@ -88,6 +94,7 @@ export const FormWhatsapp = ()=>{
         await updateDoc(queryDoc, {ultimoNumero: ultimoNumeroMasUno})             
         
         const docRef = doc(db, "LeadsParaAgendar", `${ultimoNumeroMasUno} - ${fullNameValue}`)
+
 
         setDoc(docRef, {fullname: `${ultimoNumeroMasUno} - ${fullNameValue}`,  phoneNumber: phoneValueHandled2, email: mailValue, date: date, cumplimentada: false}).then(res=>{        
                     fullNameValueInput.current.value = ""

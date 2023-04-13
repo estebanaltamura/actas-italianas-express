@@ -56,25 +56,39 @@ export const Form = ()=>{
         });
 
         
-        let indexFirstValidNumber
-        if (/^0/.test(phoneValueHandled.join(""))){
-            indexFirstValidNumber = phoneValueHandled.findIndex(element=> element !== "0")
-        }
-        else if (/^549/.test(phoneValueHandled.join(""))){
-            indexFirstValidNumber = 3
+        let indexFirstValidNumber1
+        let indexFirstValidNumber2
+
+        
+        if (/^549/.test(phoneValueHandled.join(""))){
+            indexFirstValidNumber1 = 3
         }
         else if (/^54/.test(phoneValueHandled.join(""))){
-            indexFirstValidNumber = 2
+            indexFirstValidNumber1 = 2
         }
         else if (/^9/.test(phoneValueHandled.join(""))){
-            indexFirstValidNumber = 1
+            indexFirstValidNumber1 = 1
+        }
+
+        const phoneValueHandled2 = phoneValueHandled.slice(indexFirstValidNumber1)
+
+        if (/^0/.test(phoneValueHandled2.join(""))){
+            indexFirstValidNumber2 = phoneValueHandled2.findIndex(element=> element !== "0")
         }
         
-        const phoneValueHandled2 = "+549" + phoneValueHandled.slice(indexFirstValidNumber).join("")
-        
+        console.log(phoneValueHandled)
+        console.log(phoneValueHandled2)
+        const phoneValueHandled3 = "+549" + phoneValueHandled2.slice(indexFirstValidNumber2).join("")
+        console.log(phoneValueHandled3)
+        const mailValue2 = [...mailValue].filter(element => {
+            return element !== " " && element
+        });
+
+        const mailValue3 = mailValue2.join("")
+
         fullNameValidator(fullNameValue)
-        telephoneValidator(phoneValueHandled2)
-        mailValidator(mailValue)
+        telephoneValidator(phoneValueHandled3)
+        mailValidator(mailValue3)
         
         if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValueHandled2) && mailValidator(mailValue)){
         //setIsLoading(true)

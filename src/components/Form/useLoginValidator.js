@@ -11,25 +11,19 @@ export const useLoginValidator = (e)=>{
     const [phoneAlert, setPhoneAlert] = useState("")
     
     const fullNameValidator = (fullName)=>{
-        const digitRegExp = /\d/
-        if(digitRegExp.test(fullName)){
-            setFullNameAlert("Solo ingrese letras. Numeros no permitidos")
+        const digitRegExp = /^[a-zA-Z\s]*$/g
+        if(!digitRegExp.test(fullName)){
+            setFullNameAlert("Numeros y caracteres especiales no estan permitidos")
             return false
-        } 
-
-        const isThereTwoWords = /\w+\s*\w+/
-        if(!isThereTwoWords.test(fullName)){
-            setFullNameAlert("Por favor inserte nombre completo")
-            return false
-        } 
+        }        
 
         return true
     }
     
     const telephoneValidator = (cadena)=> {
-        console.log(cadena)
+        console.log("useLogin", cadena)
         const digitRegExpVacia = /^$/
-        const digitRegExpNumerosGuiones = /^[\d-+]*$/
+        //const digitRegExpNumerosGuiones = /^[\d-+]*$/
         //const digitRegExpComienza = /^\d/
         //const digitRegExpTermina = /\d+$/
         //const digitRegExpGuiones = /--/
@@ -39,13 +33,6 @@ export const useLoginValidator = (e)=>{
             return false
         } 
 
-        if(!digitRegExpNumerosGuiones.test(cadena)){
-            console.log(cadena)
-            setPhoneAlert("Solo numeros y/o guiones")
-            return false
-        } 
-            
-            
         if(cadena.length > 14){
             setPhoneAlert("Ingreso numeros de mas")            
         return false
@@ -87,7 +74,7 @@ export const useLoginValidator = (e)=>{
             return       
         }  
         
-        const regExpmail = /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}/
+        const regExpmail = /^([a-zA-Z0-9_])+([.]{0,1}[a-zA-Z0-9_])*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}$/
         if(!regExpmail.test(mail)){
             setMailAlert("Ingrese un mail valido, ejemplo: mail@mail.com")
             return 
