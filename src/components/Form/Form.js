@@ -55,29 +55,23 @@ export const Form = ()=>{
             return (/\d/.test(element) && element !== " ")  && element
         });
 
-        console.log("filtrado digitos", phoneValueHandled)
+        
         let indexFirstValidNumber
         if (/^0/.test(phoneValueHandled.join(""))){
-            console.log(0)
             indexFirstValidNumber = phoneValueHandled.findIndex(element=> element !== "0")
         }
         else if (/^549/.test(phoneValueHandled.join(""))){
-            console.log("549")
             indexFirstValidNumber = 3
         }
         else if (/^54/.test(phoneValueHandled.join(""))){
-            console.log("54")
             indexFirstValidNumber = 2
         }
         else if (/^9/.test(phoneValueHandled.join(""))){
-            console.log("9")
             indexFirstValidNumber = 1
         }
         
-
         const phoneValueHandled2 = "+549" + phoneValueHandled.slice(indexFirstValidNumber).join("")
-        //console.log(phoneValueHandled2, phoneValueHandled2.length)
-
+        
         fullNameValidator(fullNameValue)
         telephoneValidator(phoneValueHandled2)
         mailValidator(mailValue)
