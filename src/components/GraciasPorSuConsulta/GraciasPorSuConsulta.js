@@ -29,7 +29,7 @@ export const GraciasPorSuConsulta = ()=> {
                         Volver
                         <BsChevronLeft className="volverIcon" />
                     </Link>
-                </div>
+                </div> 
             <FooterGracias />
             </div>
             
