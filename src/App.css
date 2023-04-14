@@ -147,10 +147,16 @@ p{
   text-align: center;
   margin: 0 auto;
   color: white;
+  font-family: Roboto, san-serif;
+  font-size: 14px;
+  font-weight: 300;
+
   
 }
 
 .chatIcon{
+  width: 20px;
+  height: 20px;
   margin: auto;
 }
 
