@@ -48,7 +48,7 @@ function App() {
                 <h2 className="subTitulo">ELEGI VIVIR MEJOR</h2>
                 <p className="parrafo1">Actas italianas express surgió de la necesidad de solucionar el problema que tienen todos los descendientes de italianos a la hora de pedir actas desde Argentina</p>
                 <p className="parrafo2">Las comunas italianas son muy reticentes a responder pedidos desde el exterior ya que están saturadas y priorizan las gestiones realizadas en la propia Italia</p>
-                <h3 className="gancho1">EN ACTAS ITALIANAS EXPRESS NOS COMPROMETEMOS A ENCONTRAR TU ACTA EN MENOS DE 30 DIAS</h3>
+                <h3 className="gancho1">EN ACTAS ITALIANAS EXPRESS HACEMOS HASTA LO IMPOSIBLE PARA QUE TU ACTA ESTE EN POCOS DIAS</h3>
                 <p className="parrafo3"><b>Nuestra red de operadores en Italia logran en pocos días encontrar el acta, lo cual desde Argentina suele ser un trabajo de meses </b>y que en muchísimos casos la comuna no responde ni el pedido original ni a los reclamos subsecuentes</p>
                               
                 <h3 className="ctaFormulario1">Pedí el acta de nacimiento de tu AVO</h3>
