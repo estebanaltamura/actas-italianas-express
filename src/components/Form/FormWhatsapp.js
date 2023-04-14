@@ -84,7 +84,7 @@ export const FormWhatsapp = ()=>{
             return element !== " " && element
         });
 
-        const mailValue3 = mailValue2.join("")
+        const mailValue3 = mailValue2.join("").toLowerCase()
 
         fullNameValidator(fullNameValue)
         telephoneValidator(phoneValueHandled3)
