@@ -129,6 +129,7 @@ p{
 .whatsappLink{
   display: grid;
   grid-template-columns: 30px 70px;
+  padding: 0 15px;
   animation-name: fadeIn;
   animation-duration: 0.5s, 4s;
   animation-delay: 0s, 4s;
@@ -136,7 +137,7 @@ p{
   position: fixed;
   bottom: 50px;
   right: 15px;
-  width: 110px;
+  width: 130px;
   height: 30px;
   z-index: 1;
   background-color: #63BEE6;
