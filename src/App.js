@@ -15,17 +15,8 @@ function App() {
   const whatsappIcon = useRef()
   const {isLoading} = useContext(isLoadingContext)
 
-  const mostrarIconoWhatsapp = ()=>{
-    const scrollPercent = window.scrollY/(document.documentElement.clientHeight)   
-    scrollPercent > 0.70 && whatsappIcon.current.classList.replace("hidden", "whatsappLink")
-  }
-
   useEffect(() => {    
-      window.scrollTo(0, 0);  
-      window.addEventListener('scroll', mostrarIconoWhatsapp);
-    return () => {
-      window.removeEventListener('scroll', mostrarIconoWhatsapp);
-    };
+      window.scrollTo(0, 0);      
   }, []);
 
 
@@ -39,7 +30,7 @@ function App() {
                       :
             <div className="App">
             <Header />
-            <Link to="/chatearConUnOperador" ref={whatsappIcon} className="hidden">
+            <Link to="/chatearConUnOperador" ref={whatsappIcon} className="whatsappLink">
               <IoChatbubblesOutline className="chatIcon"/>
               HABLEMOS
             </Link>
