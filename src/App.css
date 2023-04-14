@@ -131,10 +131,10 @@ p{
   grid-template-columns: 25px 80px;
   grid-template-rows: 38px;
   padding: 2px 15px 0 15px;
-  animation-name: fadeIn, whatsappIconAnimation;
-  animation-duration: 0.5s, 4s;
-  animation-delay: 0.1s, 4s;
-  animation-iteration-count: 1, infinite;  
+  animation-name:  whatsappIconAnimation;
+  animation-duration: 4s;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;  
   position: fixed;
   bottom: 200px;
   right: 20px;
