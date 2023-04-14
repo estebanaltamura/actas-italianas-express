@@ -2,7 +2,7 @@ import { Form } from './components/Form/Form';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { Link } from 'react-router-dom';
-import { useEffect, useRef, useContext} from 'react';
+import { useEffect, useContext} from 'react';
 import { isLoadingContext } from './Contexts/IsLoadingContext';
 import Spinner from 'react-bootstrap/Spinner';
 import { IoChatbubblesOutline } from "react-icons/io5";
@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
 
-  const whatsappIcon = useRef()
+  
   const {isLoading} = useContext(isLoadingContext)
 
   useEffect(() => {    
@@ -30,7 +30,7 @@ function App() {
                       :
             <div className="App">
             <Header />
-            <Link to="/chatearConUnOperador" ref={whatsappIcon} className="whatsappLink">
+            <Link to="/chatearConUnOperador" className="whatsappLink">
               <IoChatbubblesOutline className="chatIcon"/>
               HABLEMOS
             </Link>
