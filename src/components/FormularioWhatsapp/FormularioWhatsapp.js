@@ -2,11 +2,11 @@ import "./FormularioWhatsapp.css"
 import { FormWhatsapp } from "../Form/FormWhatsapp"
 import { FooterGracias } from "../Footer/FooterGracias"
 import { Header } from "../Header/Header"
-import { useLayoutEffect } from "react"
+import { useEffect } from "react"
 
 export const FormularioWhatsapp = ()=>{
 
-    useLayoutEffect(()=>{
+    useEffect(()=>{
         window.scrollTo(0,0)
     },[])
 
