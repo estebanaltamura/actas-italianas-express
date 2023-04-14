@@ -2,10 +2,15 @@ import { Link } from "react-router-dom";
 import { BsChevronLeft } from "react-icons/bs";
 import { Header } from "../Header/Header"; 
 import { FooterGracias } from "../Footer/FooterGracias";
+import { useEffect } from "react";
 import "./GraciasPorSuConsulta.css";
 
 
 export const GraciasPorSuConsulta = ()=> {
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
 
     return(
         <>
