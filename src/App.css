@@ -129,7 +129,8 @@ p{
 .whatsappLink{
   display: grid;
   grid-template-columns: 25px 80px;
-  padding: 0 15px;
+  grid-template-rows: 38px;
+  padding: 2px 15px 0 15px;
   animation-name: fadeIn, whatsappIconAnimation;
   animation-duration: 0.5s, 4s;
   animation-delay: 0s, 4s;
