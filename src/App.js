@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { useEffect, useRef, useContext} from 'react';
 import { isLoadingContext } from './Contexts/IsLoadingContext';
 import Spinner from 'react-bootstrap/Spinner';
+import { IoChatbubblesOutline } from "react-icons/io5";
+
 
 import './App.css';
 
@@ -14,13 +16,12 @@ function App() {
   const {isLoading} = useContext(isLoadingContext)
 
   const mostrarIconoWhatsapp = ()=>{
-    const scrollPercent = window.scrollY/(document.documentElement.clientHeight)
-
-    
+    const scrollPercent = window.scrollY/(document.documentElement.clientHeight)   
     scrollPercent > 0.70 && whatsappIcon.current.classList.replace("hidden", "whatsappLink")
   }
 
-  useEffect(() => {
+  useEffect(() => {    
+      window.scrollTo(0, 0);  
       window.addEventListener('scroll', mostrarIconoWhatsapp);
     return () => {
       window.removeEventListener('scroll', mostrarIconoWhatsapp);
@@ -38,12 +39,14 @@ function App() {
                       :
             <div className="App">
             <Header />
-            <Link to="/chatearConUnOperador"><img ref={whatsappIcon} className="hidden" src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"/></Link>
+            <Link to="/chatearConUnOperador" ref={whatsappIcon} className="hidden">
+              <IoChatbubblesOutline className="chatIcon"/>
+              HABLEMOS
+            </Link>
             
             {
             window.innerWidth < 768 ? 
-              <img className="portada"  src="https://i.postimg.cc/XY4Hf5Bx/portadamobile4.jpg" />
-                                    :
+              <img className="portada"  src="https://i.postimg.cc/XY4Hf5Bx/portadamobile4.jpg" />                                    :
               <img className="portada"  src="https://i.postimg.cc/wvjpTvpT/portadadesktop2.jpg" />                      
             }
                 

@@ -3,13 +3,9 @@ import { BsChevronLeft } from "react-icons/bs";
 import { Header } from "../Header/Header"; 
 import { FooterGracias } from "../Footer/FooterGracias";
 import "./GraciasPorSuConsulta.css";
-import { useLayoutEffect } from "react";
+
 
 export const GraciasPorSuConsulta = ()=> {
-
-    useLayoutEffect(()=>{
-        window.scrollTo(0, 0);
-    },[])
 
     return(
         <>
