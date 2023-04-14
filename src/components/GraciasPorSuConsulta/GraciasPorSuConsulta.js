@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { BsChevronLeft } from "react-icons/bs";
 import { Header } from "../Header/Header"; 
-import { Footer } from "../Footer/Footer";
-import "./GraciasPorSuConsulta.css"
+import { FooterGracias } from "../Footer/FooterGracias";
+import "./GraciasPorSuConsulta.css";
 
 export const GraciasPorSuConsulta = ()=> {
 
@@ -24,8 +24,9 @@ export const GraciasPorSuConsulta = ()=> {
                         <BsChevronLeft className="volverIcon" />
                     </Link>
                 </div>
+            <FooterGracias />
             </div>
-            <Footer />
+            
             
         </>
     )

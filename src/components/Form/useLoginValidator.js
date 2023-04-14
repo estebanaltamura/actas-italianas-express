@@ -11,17 +11,21 @@ export const useLoginValidator = (e)=>{
     const [phoneAlert, setPhoneAlert] = useState("")
     
     const fullNameValidator = (fullName)=>{
-        const digitRegExp = /^[a-zA-Z\s]*$/g
+        const digitRegExp = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/g
         if(!digitRegExp.test(fullName)){
             setFullNameAlert("Numeros y caracteres especiales no estan permitidos")
             return false
-        }        
+        }
+        
+        if(fullName == ""){
+            setFullNameAlert("Ingrese su nombre")
+            return false
+        } 
 
         return true
     }
     
     const telephoneValidator = (cadena)=> {
-        console.log("useLogin", cadena)
         const digitRegExpVacia = /^$/
         //const digitRegExpNumerosGuiones = /^[\d-+]*$/
         //const digitRegExpComienza = /^\d/
@@ -54,6 +58,12 @@ export const useLoginValidator = (e)=>{
             setMailAlert("Ingrese un mail valido, ejemplo: mail@mail.com"); 
             return            
         } 
+
+        const acentos = /[áéíóúÁÉÍÓÚñÑ]+/
+        if(acentos.test(mail)){
+            setMailAlert("No se permiten acentos ni la letra Ñ") 
+            return           
+        }  
         
         const twoDotsRegExp = /\.{2,}/
         if(twoDotsRegExp.test(mail)){
@@ -74,7 +84,7 @@ export const useLoginValidator = (e)=>{
             return       
         }  
         
-        const regExpmail = /^([a-zA-Z0-9_])+([.]{0,1}[a-zA-Z0-9_])*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}$/
+        const regExpmail = /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/
         if(!regExpmail.test(mail)){
             setMailAlert("Ingrese un mail valido, ejemplo: mail@mail.com")
             return 

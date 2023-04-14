@@ -8,6 +8,7 @@ import { TbHelp } from "react-icons/tb";
 import { isLoadingContext } from "../../Contexts/IsLoadingContext";
 
 
+
 import "./Form.css"
 
 export const Form = ()=>{
@@ -44,7 +45,7 @@ export const Form = ()=>{
 
     const onSubmitHandler = async(e)=>{
         e.preventDefault()
-
+        
         const fullNameValue = e.target.fullName.value
         const phoneValue = e.target.phone.value
         const mailValue = e.target.mail.value
@@ -76,10 +77,9 @@ export const Form = ()=>{
             indexFirstValidNumber2 = phoneValueHandled2.findIndex(element=> element !== "0")
         }
         
-        console.log(phoneValueHandled)
-        console.log(phoneValueHandled2)
+        
         const phoneValueHandled3 = "+549" + phoneValueHandled2.slice(indexFirstValidNumber2).join("")
-        console.log(phoneValueHandled3)
+        
         const mailValue2 = [...mailValue].filter(element => {
             return element !== " " && element
         });
@@ -90,7 +90,12 @@ export const Form = ()=>{
         telephoneValidator(phoneValueHandled3)
         mailValidator(mailValue3)
         
-        if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValueHandled2) && mailValidator(mailValue)){
+        if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValueHandled3) && mailValidator(mailValue3)){
+        submit.current.setAttribute("disabled", "true");
+        submit.current.style.backgroundColor ="#63BEE6";
+        
+        submit.current.textContent= "ENVIANDO..."
+
         //setIsLoading(true)
         const db = getFirestore()
         
@@ -102,15 +107,16 @@ export const Form = ()=>{
         
         const docRef = doc(db, "LeadsParaAgendar", `${ultimoNumeroMasUno} - ${fullNameValue}`)
 
-        setDoc(docRef, {fullname: `${ultimoNumeroMasUno} - ${fullNameValue}`,  phoneNumber: phoneValueHandled2, email: mailValue, date: date, cumplimentada: false}).then(res=>{        
+        setDoc(docRef, {fullname: `${ultimoNumeroMasUno} - ${fullNameValue}`,  phoneNumber: phoneValueHandled3, email: mailValue3, date: date, cumplimentada: false}).then(res=>{        
                     fullNameValueInput.current.value = ""
                     phoneValueInput.current.value = ""
                     mailValueInput.current.value = ""
-                    submit.current.setAttribute("disabled", "true");                    
+                    submit.current.setAttribute("disabled", "false");                    
                     //setIsLoading(false)
                     history("/graciasPorSuConsulta")
                 }).catch(error=>{                     
                     console.log(error)
+                    submit.current.setAttribute("disabled", "false");  
                     MySwal.fire("No pudimos procesar su orden. Intente nuevamente")
                 })    
         }   
