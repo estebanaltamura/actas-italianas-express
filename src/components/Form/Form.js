@@ -93,7 +93,6 @@ export const Form = ()=>{
         if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValueHandled3) && mailValidator(mailValue3)){
         submit.current.setAttribute("disabled", "true");
         submit.current.style.backgroundColor ="#63BEE6";
-        
         submit.current.textContent= "ENVIANDO..."
 
         //setIsLoading(true)

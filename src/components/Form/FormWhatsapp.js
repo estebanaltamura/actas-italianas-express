@@ -91,6 +91,9 @@ export const FormWhatsapp = ()=>{
         mailValidator(mailValue3)
         
         if (fullNameValidator(fullNameValue) && telephoneValidator(phoneValueHandled3) && mailValidator(mailValue3)){
+        submit.current.setAttribute("disabled", "true");
+        submit.current.style.backgroundColor ="#63BEE6";
+        submit.current.textContent= "ENVIANDO..."
         //setIsLoading(true)
         const db = getFirestore()
         
@@ -106,13 +109,14 @@ export const FormWhatsapp = ()=>{
         setDoc(docRef, {fullname: `${ultimoNumeroMasUno} - ${fullNameValue}`,  phoneNumber: phoneValueHandled3, email: mailValue3, date: date, cumplimentada: false}).then(res=>{        
                     fullNameValueInput.current.value = ""
                     phoneValueInput.current.value = ""
-                    mailValueInput.current.value = ""
-                    submit.current.setAttribute("disabled", "true");                    
+                    mailValueInput.current.value = ""                     
+                    submit.current.setAttribute("disabled", "false");                
                     //setIsLoading(false)
                     window.location.href = 'https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.'
 
                 }).catch(error=>{                     
                     console.log(error)
+                    submit.current.setAttribute("disabled", "false");  
                     MySwal.fire("No pudimos procesar su orden. Intente nuevamente")
                 })    
         }   
