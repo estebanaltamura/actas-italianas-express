@@ -130,7 +130,7 @@ p{
   display: grid;
   grid-template-columns: 30px 70px;
   padding: 0 15px;
-  animation-name: fadeIn;
+  animation-name: fadeIn, whatsappIconAnimation;
   animation-duration: 0.5s, 4s;
   animation-delay: 0s, 4s;
   animation-iteration-count: 1, infinite;  
