@@ -40,6 +40,7 @@ a.messageFooter {
   color: black;
   font-size: 18px;
   color: white;
+  user-select: all;
 }
 
 .iconFooter {
