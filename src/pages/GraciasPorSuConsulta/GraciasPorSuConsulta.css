@@ -1,0 +1,100 @@
+.mensajeGraciasContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - 160px);
+  height: fit-content;
+  justify-content: center;
+  padding: 60px 0 60px 0;
+}
+
+.buttonsContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: 222px;
+  align-items: center;
+  margin: 100px auto 0 auto;
+}
+
+.ganchoChatMessage {
+  text-align: center;
+  font-weight: 700;
+  height: 50px;
+  font-size: 22px;
+  color: #63bee6;
+}
+
+.loConactaremosmessage {
+  width: 320px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 700;
+}
+
+.chatButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 3px 3px 4px 0px #6c6c6c;
+  background: #384d56;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 20px;
+  width: 320px;
+  height: 66px;
+  transition: all 1s;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.chatButton:hover {
+  color: white !important;
+}
+.chatButton:visited {
+  color: white !important;
+}
+
+.chatAhoraIcon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 8px;
+  left: 25px;
+}
+
+.volverButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: white;
+  color: #384d56;
+  margin-top: 20px;
+  width: 150px;
+  height: 66px;
+  transition: all 1s;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.volverButton:hover {
+  color: #384d56 !important;
+}
+
+.volverButton:visited {
+  color: #384d56 !important;
+}
+
+.volverIcon {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  top: 22px;
+  left: 20px;
+}

@@ -1,0 +1,17 @@
+.formularioWhatsappContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  width: 100%;
+  min-height: calc(100vh - 160px);
+  height: fit-content;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.chatearPageMessage {
+  margin: 20px auto;
+  text-align: center;
+  color: #63bee6;
+  font-weight: 700;
+}

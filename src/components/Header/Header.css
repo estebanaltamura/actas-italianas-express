@@ -1,25 +1,22 @@
-.headerContainer{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    background-color: #384d56;
-    color: white;
-
+.headerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #384d56;
+  color: white;
 }
 
-.messageContainer{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+.messageContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-.message{
-    font-size: 14px;
-    text-align: center;
+.message {
+  font-size: 14px;
+  text-align: center;
 }
-
-
