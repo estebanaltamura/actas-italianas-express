@@ -7,10 +7,8 @@
 
 .spinnerHome {
   position: absolute;
-  top: 42%;
-  left: calc(50% - 80px);
-  width: 160px;
-  height: 160px;  
+  top: 38%;
+  left: calc(50% - 80px); 
 }
 
 .portada {
