@@ -82,7 +82,7 @@ export const useSubmitLeadToFirestore = ()=>{
           clearTimeout(timeOut)
         }, 3000)
 
-        //window.open('https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.', '_blank' )  
+        window.open('https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.', '_blank' )  
         
        
                    
