@@ -14,7 +14,7 @@ export const Home = () => {
   const { getCurrentAndLastWidth, wasTriggeredMediaQuery } = useSyntheticMediaQueries()
 
   const loadCoverImageHandler = (event) => {
-    event.target.classList.value.includes("portada") && setIsLoading(false);
+    //event.target.classList.value.includes("portada") && setIsLoading(false);
   }; 
 
   useEffect(() => {
