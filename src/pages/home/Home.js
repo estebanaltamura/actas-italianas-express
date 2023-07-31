@@ -17,7 +17,9 @@ export const Home = () => {
     event.target.classList.value.includes("portada") && setIsLoading(false);
   }; 
 
-  useEffect(() => {
+   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const changeScreenWidthHandler = () => {
       setCurrentScreenWidth(window.innerWidth);
     };
