@@ -93,7 +93,7 @@ export const Home = () => {
             <h3 className="ctaFormulario2">
               Déjenos sus datos y lo contactaremos en menos de 24 horas
             </h3>
-            <FormHome />
+            {/* <FormHome /> */}
             <div className="lineaDivisoria1"></div>
             <p className="parrafo4">
               Luego de tener el acta de nacimiento de tu AVO tenés que solicitar

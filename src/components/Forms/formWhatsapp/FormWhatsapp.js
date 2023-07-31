@@ -1,12 +1,8 @@
 import { useRef } from "react";
-import { useLoginValidator } from "../../../hooks/useLoginValidator";
-import {
-  getFirestore,  
-  setDoc,
-  doc,
-  getDoc,
-  updateDoc,
-} from "firebase/firestore";
+import { useFormValidator } from "../../../hooks/useFormValidator";
+import { usePhoneNumberHandler } from "../../../hooks/usePhoneNumberHandler";
+import { useSubmitLeadToFirestore } from "../../../hooks/useSubmitLeadToFirestore";
+
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { TbHelp } from "react-icons/tb";
@@ -15,14 +11,17 @@ import "./FormWhatsapp.css";
 export const FormWhatsapp = () => {
   const MySwal = withReactContent(Swal);
   const {
-    fullNameValidator,
-    telephoneValidator,
-    mailValidator,
+    areValidEntries,
+    setAlerts,    
     resetAlerts,
     fullNameAlert,
     phoneAlert,
     mailAlert,
-  } = useLoginValidator();
+  } = useFormValidator();
+  const { phoneNumberHandler } = usePhoneNumberHandler()
+  const { submitForm } = useSubmitLeadToFirestore()
+
+
   const fullNameValueInput = useRef();
   const phoneValueInput = useRef();
   const mailValueInput = useRef();
@@ -61,104 +60,23 @@ export const FormWhatsapp = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
-    const fullNameValue = e.target.fullName.value;
-    const phoneValue = e.target.phone.value;
-    const mailValue = e.target.mail.value;
+    const fullName = e.target.fullName.value.toLowerCase();
+    const phoneNumber = e.target.phone.value;
+    const mail = e.target.mail.value.toLowerCase();
 
-    const date = new Date().toLocaleDateString("en-us", {
-      weekday: "long",
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+    const phoneNumberHandled = phoneNumberHandler(phoneNumber)
 
-    const phoneValueHandled = [...phoneValue].filter((element) => {
-      return /\d/.test(element) && element !== " " && element;
-    });
+    if(areValidEntries(fullName, phoneNumberHandled, mail)){
+      const elements = {
+                        "fullNameELement"     : fullNameValueInput.current, 
+                        "phoneNumberElement"  : phoneValueInput.current, 
+                        "mailElement"         : mailValueInput.current, 
+                        "submitButton"        : submit.current}
 
-    let indexFirstValidNumber1;
-    let indexFirstValidNumber2;
-
-    if (/^549/.test(phoneValueHandled.join(""))) {
-      indexFirstValidNumber1 = 3;
-    } else if (/^54/.test(phoneValueHandled.join(""))) {
-      indexFirstValidNumber1 = 2;
-    } else if (/^9/.test(phoneValueHandled.join(""))) {
-      indexFirstValidNumber1 = 1;
+      submitForm(fullName, phoneNumberHandled, mail, elements)
     }
 
-    const phoneValueHandled2 = phoneValueHandled.slice(indexFirstValidNumber1);
-
-    if (/^0/.test(phoneValueHandled2.join(""))) {
-      indexFirstValidNumber2 = phoneValueHandled2.findIndex(
-        (element) => element !== "0"
-      );
-    }
-
-    const phoneValueHandled3 =
-      "+549" + phoneValueHandled2.slice(indexFirstValidNumber2).join("");
-
-    const mailValue2 = [...mailValue].filter((element) => {
-      return element !== " " && element;
-    });
-
-    const mailValue3 = mailValue2.join("").toLowerCase();
-
-    fullNameValidator(fullNameValue);
-    telephoneValidator(phoneValueHandled3);
-    mailValidator(mailValue3);
-
-    if (
-      fullNameValidator(fullNameValue) &&
-      telephoneValidator(phoneValueHandled3) &&
-      mailValidator(mailValue3)
-    ) {
-      submit.current.setAttribute("disabled", "true");
-      submit.current.style.backgroundColor = "#63BEE6";
-      submit.current.textContent = "ENVIANDO...";
-      //setIsLoading(true)
-      const db = getFirestore();
-
-      const queryDoc = doc(
-        db,
-        "UltimoNumeroDeContacto",
-        "E9mEVykIO4N7719I6dh3"
-      );
-      const ultimoNumeroDeContacto1 = await getDoc(queryDoc);
-      const ultimoNumeroDeContacto2 =
-        ultimoNumeroDeContacto1.data().ultimoNumero;
-      const ultimoNumeroMasUno = ultimoNumeroDeContacto2 + 1;
-      await updateDoc(queryDoc, { ultimoNumero: ultimoNumeroMasUno });
-
-      const docRef = doc(
-        db,
-        "LeadsParaAgendar",
-        `${ultimoNumeroMasUno} - ${fullNameValue}`
-      );
-
-      setDoc(docRef, {
-        fullname: `${ultimoNumeroMasUno} - ${fullNameValue}`,
-        phoneNumber: phoneValueHandled3,
-        email: mailValue3,
-        date: date,
-        cumplimentada: false,
-      })
-        .then((res) => {
-          fullNameValueInput.current.value = "";
-          phoneValueInput.current.value = "";
-          mailValueInput.current.value = "";
-          submit.current.setAttribute("disabled", "false");          
-          window.location.href =
-            "https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.";
-        })
-        .catch((error) => {
-          console.log(error);
-          submit.current.setAttribute("disabled", "false");
-          MySwal.fire("No pudimos procesar su orden. Intente nuevamente");
-        });
-    }
+    else setAlerts(fullName, phoneNumberHandled, mail)    
   };
 
   return (
