@@ -77,7 +77,7 @@ export const useSubmitLeadToFirestore = ()=>{
       cumplimentada: false,
       })
       .then(() => {    
-        const timeOut = (()=>{
+        const timeOut = setTimeout(()=>{
           history('/home') 
           clearTimeout(timeOut)
         }, 3000)
