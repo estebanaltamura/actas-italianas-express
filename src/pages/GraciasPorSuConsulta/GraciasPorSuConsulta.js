@@ -1,23 +1,26 @@
+import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { BsChevronLeft } from "react-icons/bs";
-import { Header } from "../../components/Header/Header";
-
-import { useEffect } from "react";
 import "./GraciasPorSuConsulta.css";
 
 export const GraciasPorSuConsulta = () => {
+  const { setIsLoading } = useContext(IsLoadingContext)
+
+  const backToHomeHandler = ()=>{
+    setIsLoading(true)
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
-      <div className="mensajeGraciasContainer">
-        <Header />
+      <div className="mensajeGraciasContainer">        
         <h4 className="loConactaremosmessage">
           En menos de 24 horas nos contactaremos con usted
         </h4>
-
         <div className="buttonsContainer">
           <h5 className="ganchoChatMessage">
             Si quiere puede hablar ya mismo con un representante
@@ -32,7 +35,7 @@ export const GraciasPorSuConsulta = () => {
               src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"
             />
           </Link>
-          <Link to="/home" className="volverButton">
+          <Link to="/home" className="volverButton" onClick={backToHomeHandler}>
             Volver
             <BsChevronLeft className="volverIcon" />
           </Link>

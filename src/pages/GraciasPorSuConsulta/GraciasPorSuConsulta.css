@@ -8,6 +8,13 @@
   padding: 60px 0 60px 0;
 }
 
+.loConactaremosmessage {
+  width: 320px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 700;
+}
+
 .buttonsContainer {
   position: relative;
   display: flex;
@@ -26,12 +33,6 @@
   color: #63bee6;
 }
 
-.loConactaremosmessage {
-  width: 320px;
-  margin: 0 auto;
-  text-align: center;
-  font-weight: 700;
-}
 
 .chatButton {
   position: relative;

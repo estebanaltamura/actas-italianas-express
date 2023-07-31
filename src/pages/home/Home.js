@@ -1,20 +1,21 @@
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
+import { useSyntheticMediaQueries } from "../../hooks/useSyntheticMediaQueries";
 import { FormHome } from "../../components/Forms/formHome/FormHome";
 import { IoChatbubblesOutline } from "react-icons/io5";
-import logo from "../../assets/spinnerActasHome.gif";
+import Lottie from 'react-lottie-player'
+import spinner from '../../assets/spinnerJson.json'
 import "./Home.css";
 
 export const Home = () => {
-  const [currentScreenWidth, setCurrentScreenWidth] = useState(
-    window.innerWidth
-  );
+  const [currentScreenWidth, setCurrentScreenWidth] = useState(window.innerWidth);
   const { isLoading, setIsLoading } = useContext(IsLoadingContext);
+  const { getCurrentAndLastWidth, wasTriggeredMediaQuery } = useSyntheticMediaQueries()
 
   const loadCoverImageHandler = (event) => {
     event.target.classList.value.includes("portada") && setIsLoading(false);
-  };
+  }; 
 
   useEffect(() => {
     const changeScreenWidthHandler = () => {
@@ -26,13 +27,23 @@ export const Home = () => {
     return () => window.removeEventListener("resize", changeScreenWidthHandler);
   }, []);
 
+  useEffect(()=>{
+    const [currentWidth, lastWidth] = getCurrentAndLastWidth(currentScreenWidth)
+    wasTriggeredMediaQuery(currentWidth, lastWidth) && setIsLoading(true)
+  },[currentScreenWidth])
+
   return (
     <>
       <div className="homeContainer" onLoad={loadCoverImageHandler}>
-        <img
-          className={isLoading === true ? "spinnerClass" : "hidden"}
-          src={logo}
-        />
+        <Lottie 
+          animationData={spinner}
+          style= {{"width": "160px", "height": "160px"}}
+          className={isLoading === true ? "spinnerHome" : "hidden"}
+          play
+          loop
+          color="yellow"
+          
+        />        
 
         <div className={isLoading === true ? "hidden" : ""}>
           {currentScreenWidth < 768 ? (
@@ -117,6 +128,3 @@ export const Home = () => {
   );
 };
 
-// <Spinner animation="border" role="status">
-//                 <span className="visually-hidden">Loading...</span>
-//             </Spinner>

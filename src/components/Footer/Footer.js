@@ -3,7 +3,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import "./Footer.css";
 
 export const Footer = () => {
-  return (
+  return ( 
     <div className="footerContainer">
       <p className="contactenosTitulo">CONTACTANOS Y SEGUINOS EN REDES</p>
 

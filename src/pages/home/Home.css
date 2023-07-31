@@ -1,14 +1,16 @@
 .homeContainer {
+  position: relative;
   margin: 0 auto;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  min-height: 100vh;
 }
 
-.blocksHomeGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(15, auto);
-  padding: 0 20px;
+.spinnerHome {
+  position: absolute;
+  top: 45%;
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 120px;  
 }
 
 .portada {
@@ -16,6 +18,13 @@
   margin: 0 auto;
   width: 100%;
   padding-top: 30px;
+}
+
+.blocksHomeGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(15, auto);
+  padding: 0 20px;
 }
 
 .titulo,
@@ -34,12 +43,6 @@
   font-size: 18px;
 }
 
-.spinnerClass {
-  position: relative;
-  top: 300px;
-  width: 120px;
-  height: 120px;
-}
 
 p {
   color: #4e5c66;

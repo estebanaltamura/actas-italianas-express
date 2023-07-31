@@ -1,21 +1,15 @@
+import { useRef } from "react";
+import { useLoginValidator } from "../../../hooks/useLoginValidator";
 import {
-  getFirestore,
-  collection,
-  addDoc,
+  getFirestore,  
   setDoc,
   doc,
   getDoc,
   updateDoc,
 } from "firebase/firestore";
-
-import { useNavigate } from "react-router-dom";
-import { useRef, useContext } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { useLoginValidator } from "../../../hooks/useLoginValidator";
 import { TbHelp } from "react-icons/tb";
-import { IsLoadingContext } from "../../../contexts/IsLoadingContextProvider";
-
 import "./FormWhatsapp.css";
 
 export const FormWhatsapp = () => {
@@ -32,9 +26,7 @@ export const FormWhatsapp = () => {
   const fullNameValueInput = useRef();
   const phoneValueInput = useRef();
   const mailValueInput = useRef();
-  const submit = useRef();
-  const history = useNavigate();
-  const { isLoading, setIsLoading } = useContext(IsLoadingContext);
+  const submit = useRef();   
 
   const inputPhoneHelpClickHandler = () => {
     MySwal.fire({
@@ -157,8 +149,7 @@ export const FormWhatsapp = () => {
           fullNameValueInput.current.value = "";
           phoneValueInput.current.value = "";
           mailValueInput.current.value = "";
-          submit.current.setAttribute("disabled", "false");
-          //setIsLoading(false)
+          submit.current.setAttribute("disabled", "false");          
           window.location.href =
             "https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.";
         })
@@ -172,13 +163,13 @@ export const FormWhatsapp = () => {
 
   return (
     <>
-      <div className="loginContainer">
-        <div className="form-containerWhatsapp">
-          <form action="/action_page.php" onSubmit={onSubmitHandler}>
+      <div className="formWhatsappContainer">        
+          <form className="formFormWhatsapp" action="/action_page.php" onSubmit={onSubmitHandler}>
             <div className="inputContainer">
               <span className="subtitle">NOMBRE:</span>
               <input
                 placeholder="Ingrese su nombre completo"
+                className="inputformWhatsapp"
                 ref={fullNameValueInput}
                 autoComplete="off"
                 type="text"
@@ -192,6 +183,7 @@ export const FormWhatsapp = () => {
               <span className="subtitle">WHATSAPP:</span>
               <input
                 placeholder="Ingrese su Whatsapp Ejemplo 113 859 7894"
+                className="inputformWhatsapp"
                 ref={phoneValueInput}
                 autoComplete="off"
                 type="number"
@@ -209,6 +201,7 @@ export const FormWhatsapp = () => {
               <span className="subtitle">MAIL:</span>
               <input
                 placeholder="Ingrese su e-mail Ejemplo mail@mail.com"
+                className="inputformWhatsapp"
                 ref={mailValueInput}
                 autoComplete="off"
                 type="text"
@@ -224,8 +217,7 @@ export const FormWhatsapp = () => {
               />
               CHATEA AHORA
             </button>
-          </form>
-        </div>
+          </form>        
       </div>
     </>
   );

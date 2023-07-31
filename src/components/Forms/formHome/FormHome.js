@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLoginValidator } from "../../../hooks/useLoginValidator";
 import {
   getFirestore,
   setDoc,
@@ -5,13 +8,9 @@ import {
   getDoc,
   updateDoc,
 } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
-import { useRef } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { useLoginValidator } from "../../../hooks/useLoginValidator";
 import { TbHelp } from "react-icons/tb";
-
 import "./FormHome.css";
 
 export const FormHome = () => {
@@ -152,8 +151,7 @@ export const FormHome = () => {
           fullNameValueInput.current.value = "";
           phoneValueInput.current.value = "";
           mailValueInput.current.value = "";
-          submit.current.setAttribute("disabled", "false");
-          //setIsLoading(false)
+          submit.current.setAttribute("disabled", "false");          
           history("/graciasPorSuConsulta");
         })
         .catch((error) => {
@@ -166,13 +164,14 @@ export const FormHome = () => {
 
   return (
     <>
-      <div className="loginContainer">
+      <div className="formHomeContainer">
         <div className="form-container">
-          <form action="/action_page.php" onSubmit={onSubmitHandler}>
+          <form className="formFormHome" action="/action_page.php" onSubmit={onSubmitHandler}>
             <div className="inputContainer">
               <span className="subtitle">NOMBRE:</span>
               <input
                 placeholder="Ingrese su nombre completo"
+                className="inputFormHome"
                 ref={fullNameValueInput}
                 autoComplete="off"
                 type="text"
@@ -186,6 +185,7 @@ export const FormHome = () => {
               <span className="subtitle">WHATSAPP:</span>
               <input
                 placeholder="Ingrese su Whatsapp Ejemplo 113 859 7894"
+                className="inputFormHome"
                 ref={phoneValueInput}
                 autoComplete="off"
                 type="number"
@@ -194,7 +194,7 @@ export const FormHome = () => {
               />
               <TbHelp
                 onClick={inputPhoneHelpClickHandler}
-                className="inputPhoneHelp"
+                className="IconPhoneHelp"
               />
               <span className="inputAlerts">{phoneAlert}</span>
             </div>
@@ -203,6 +203,7 @@ export const FormHome = () => {
               <span className="subtitle">MAIL:</span>
               <input
                 placeholder="Ingrese su e-mail Ejemplo mail@mail.com"
+                className="inputFormHome"
                 ref={mailValueInput}
                 autoComplete="off"
                 type="text"
@@ -212,7 +213,7 @@ export const FormHome = () => {
               <span className="inputAlerts">{mailAlert}</span>
             </div>
 
-            <button ref={submit} type="submit" className="submit-btn">
+            <button ref={submit} type="submit" className="submitButtonFormHome">
               ENVIAR
             </button>
           </form>

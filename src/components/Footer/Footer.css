@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.contactenosTitulo {
+  color: white;
+}
+
 .footerGrid {
   display: grid;
   width: 355px;
@@ -18,6 +22,14 @@
   justify-content: center;
   padding: 0px;
   text-align: center;
+}
+
+.iconFooter {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  color: white;
+  margin: auto;
 }
 
 a.messageFooter {
@@ -43,14 +55,4 @@ a.messageFooter {
   user-select: all;
 }
 
-.iconFooter {
-  display: flex;
-  width: 20px;
-  height: 20px;
-  color: white;
-  margin: auto;
-}
 
-.contactenosTitulo {
-  color: white;
-}

@@ -1,9 +1,6 @@
 import { useState } from "react";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 
-export const useLoginValidator = (e) => {
-  const MySwal = withReactContent(Swal);
+export const useLoginValidator = (e) => {  
 
   const [fullNameAlert, setFullNameAlert] = useState("");
   const [mailAlert, setMailAlert] = useState("");

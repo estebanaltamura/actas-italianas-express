@@ -15,3 +15,35 @@
   color: #63bee6;
   font-weight: 700;
 }
+
+.volverButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: white;
+  color: #384d56;
+  margin: 23px auto;
+  width: 150px;
+  height: fit-content;
+  transition: all 1s;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.volverButton:hover {
+  color: #384d56 !important;
+}
+
+.volverButton:visited {
+  color: #384d56 !important;
+}
+
+.volverIcon {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  top: 4px;
+  left: 20px;
+}
