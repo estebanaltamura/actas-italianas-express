@@ -1,11 +1,12 @@
 import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
-import { FormWhatsapp } from "../../components/Forms/formWhatsapp/FormWhatsapp";
+import { Form } from "../../components/Form/Form";
 import { BsChevronLeft } from "react-icons/bs";
-import "./FormularioWhatsapp.css";
+import "./ChatearConUnOperador.css";
 
-export const FormularioWhatsapp = () => {
+
+export const ChatearConUnOperador = () => {
   const { setIsLoading } = useContext(IsLoadingContext)
 
   const backToHomeHandler = ()=>{
@@ -23,7 +24,7 @@ export const FormularioWhatsapp = () => {
           Ingresa tu informacion de contacto para iniciar la asesoria gratis por
           whatsapp
         </h4>
-        <FormWhatsapp />
+        <Form />
         <Link to="/home" className="volverButton" onClick={backToHomeHandler}>
             Volver
             <BsChevronLeft className="volverIcon" />

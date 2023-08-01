@@ -68,7 +68,8 @@ export const useSubmitLeadToFirestore = ()=>{
       return docRef
     }
 
-    const setDocument = (docRef, lastLeadIdNumberPlusOne, date, fullName, phoneNumberHandled, mail, submitButton )=>{
+    const setDocument = (docRef, lastLeadIdNumberPlusOne, date, fullName, phoneNumberHandled, mail, submitButton, section)=>{
+      console.log(section)
       setDoc(docRef, {
       fullname: `${lastLeadIdNumberPlusOne} - ${fullName}`,
       phoneNumber: phoneNumberHandled,
@@ -76,16 +77,18 @@ export const useSubmitLeadToFirestore = ()=>{
       date: date,
       cumplimentada: false,
       })
-      .then(() => {    
-        const timeOut = setTimeout(()=>{
-          history('/home') 
-          clearTimeout(timeOut)
-        }, 3000)
-
-        window.open('https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.', '_blank' )  
-        
-       
-                   
+      .then(() => {         
+        if(section === "home"){
+          history('/graciasPorSuConsulta') 
+        } 
+        if(section === "chatearConUnOperador"){
+          const timeOut = setTimeout(()=>{
+            history('/home') 
+            clearTimeout(timeOut)
+          }, 3000)
+  
+          window.open('https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.', '_blank' )
+        }                    
       })
       .catch((error) => {
         console.log(error);
@@ -98,13 +101,14 @@ export const useSubmitLeadToFirestore = ()=>{
 
     
 
-    const submitForm = async(fullName, phoneNumberHandled, mail, elements)=>{
+    const submitForm = async(fullName, phoneNumberHandled, mail, elements, section)=>{
+      console.log(section)
       const { fullNameELement, phoneNumberElement, mailElement, submitButton } = elements       
       elementsBehaviorWhenSubmit(fullNameELement, phoneNumberElement, mailElement, submitButton)      
       const lastLeadIdNumber = await getLastLeadIdNumber()
       const lastLeadIdNumberPlusOne = await updateLastLeadIdNumberInFirestore(lastLeadIdNumber)
       const docRef = createDocument(lastLeadIdNumberPlusOne, fullName)
-      setDocument(docRef, lastLeadIdNumberPlusOne, date, fullName, phoneNumberHandled, mail )      
+      setDocument(docRef, lastLeadIdNumberPlusOne, date, fullName, phoneNumberHandled, mail, submitButton, section)      
     }
    
 

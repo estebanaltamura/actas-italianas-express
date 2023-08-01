@@ -2,11 +2,12 @@ import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { IsLoadingContext } from "../../contexts/IsLoadingContextProvider";
 import { useSyntheticMediaQueries } from "../../hooks/useSyntheticMediaQueries";
-import { FormHome } from "../../components/Forms/formHome/FormHome";
+import { Form } from "../../components/Form/Form";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import Lottie from 'react-lottie-player'
 import spinner from '../../assets/spinnerJson.json'
 import "./Home.css";
+
 
 export const Home = () => {
   const [currentScreenWidth, setCurrentScreenWidth] = useState(window.innerWidth);
@@ -18,7 +19,12 @@ export const Home = () => {
   }; 
 
    useEffect(() => {
-    window.scrollTo(0, 0);
+
+    console.log("deberia scrollear")
+    window.scrollTo({
+      top: 0,
+      left: 0
+    });
 
     const changeScreenWidthHandler = () => {
       setCurrentScreenWidth(window.innerWidth);
@@ -34,17 +40,14 @@ export const Home = () => {
     wasTriggeredMediaQuery(currentWidth, lastWidth) && setIsLoading(true)
   },[currentScreenWidth])
 
-  return (
-    <>
+  return (  
       <div className="homeContainer" onLoad={loadCoverImageHandler}>
         <Lottie 
           animationData={spinner}
           style= {{"width": "160px", "height": "160px"}}
           className={isLoading === true ? "spinnerHome" : "hidden"}
           play
-          loop
-          color="yellow"
-          
+          loop        
         />        
 
         <div className={isLoading === true ? "hidden" : ""}>
@@ -65,16 +68,16 @@ export const Home = () => {
             <p className="parrafo1">
               Actas italianas express surgió de la necesidad de solucionar el
               problema que tienen todos los descendientes de italianos a la hora
-              de pedir actas desde Argentina
+              de pedir actas desde Argentina.
             </p>
             <p className="parrafo2">
               Las comunas italianas son muy reticentes a responder pedidos desde
               el exterior ya que están saturadas y priorizan las gestiones
-              realizadas en la propia Italia
+              realizadas en la propia Italia.
             </p>
             <h3 className="gancho1">
-              EN ACTAS ITALIANAS EXPRESS HACEMOS HASTA LO IMPOSIBLE PARA QUE TU
-              ACTA ESTE EN POCOS DIAS
+              EN ACTAS ITALIANAS EXPRESS HACEMOS HASTA LO IMPOSIBLE PARA QUE CONSEGUIR
+              TU ACTA EN POCOS DIAS
             </h3>
             <p className="parrafo3">
               <b>
@@ -83,7 +86,7 @@ export const Home = () => {
                 de meses{" "}
               </b>
               y que en muchísimos casos la comuna no responde ni el pedido
-              original ni a los reclamos subsecuentes
+              original ni a los reclamos subsecuentes.
             </p>
 
             <h3 className="ctaFormulario1">
@@ -95,17 +98,14 @@ export const Home = () => {
             <h3 className="ctaFormulario2">
               Déjenos sus datos y lo contactaremos en menos de 24 horas
             </h3>
-            {/* <FormHome /> */}
+            <Form />
             <div className="lineaDivisoria1"></div>
             <p className="parrafo4">
               Luego de tener el acta de nacimiento de tu AVO tenés que solicitar
-              en Argentina el certificado de no naturalización
-            </p>
+              en Argentina el certificado de no naturalización. El certificado de no naturalización demuestra que el AVO no
+              renunció a su ciudadanía italiana.
+            </p>           
             <p className="parrafo5">
-              El certificado de no naturalización demuestra que el AVO no
-              renunció a su ciudadanía italiana
-            </p>
-            <p className="parrafo6">
               Teniendo el acta de nacimiento italiana y el certificado de no
               naturalizacion indicando que tu avo no renunció a su ciudadanía
               italiana eso demuestra que{" "}
@@ -126,7 +126,7 @@ export const Home = () => {
           </Link>
         </div>
       </div>
-    </>
+    
   );
 };
 
