@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { IsLoadingContext } from "./contexts/IsLoadingContextProvider";
 import { Header } from "./components/Header/Header";
 import { Home } from "./pages/home/Home";
-import { GraciasPorSuConsulta } from "./pages/graciasPorSuConsulta/GraciasPorSuConsulta";
+import { GraciasPorSuConsulta } from "./pages/GraciasPorSuConsulta/GraciasPorSuConsulta";
 import { ChatearConUnOperador } from "./pages/chatearConUnOperador/ChatearConUnOperador";
 import { Footer } from "./components/Footer/Footer";
 import "./App.css";
