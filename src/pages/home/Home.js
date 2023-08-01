@@ -18,9 +18,7 @@ export const Home = () => {
     event.target.classList.value.includes("portada") && setIsLoading(false);
   }; 
 
-   useEffect(() => {
-
-    console.log("deberia scrollear")
+   useEffect(() => {    
     window.scrollTo({
       top: 0,
       left: 0
