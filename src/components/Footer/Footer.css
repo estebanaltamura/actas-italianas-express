@@ -15,7 +15,8 @@
 
 .footerGrid {
   display: grid;
-  width: 355px;
+  width: 100%;
+  max-width: 355px;
   height: 80px;
   grid-template-rows: repeat(3, 40px);
   grid-template-columns: 55px 300px;

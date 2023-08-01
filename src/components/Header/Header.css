@@ -1,3 +1,7 @@
+header{
+  width: 100%;
+}
+
 .headerContainer {
   position: fixed;
   top: 0;
@@ -20,4 +24,8 @@
 .message {
   font-size: 14px;
   text-align: center;
+}
+
+h3{
+  width: 100%;
 }

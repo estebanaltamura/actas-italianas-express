@@ -4,7 +4,7 @@ import "./Footer.css";
 
 export const Footer = () => {
   return ( 
-    <div className="footerContainer">
+    <footer className="footerContainer">
       <p className="contactenosTitulo">CONTACTANOS Y SEGUINOS EN REDES</p>
 
       <div className="footerGrid">
@@ -18,6 +18,6 @@ export const Footer = () => {
           @actasitalianasexpress
         </a>
       </div>
-    </div>
+    </footer>
   );
 };
