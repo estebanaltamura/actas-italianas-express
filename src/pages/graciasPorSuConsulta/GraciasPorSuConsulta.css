@@ -65,10 +65,10 @@
   width: 50px;
   height: 50px;
   top: 4px;
-  left: 25px;
+  left: 25px; 
 }
 
-.volverButton {
+.volverButton {  
   position: relative;
   display: flex;
   align-items: center;
