@@ -17,7 +17,7 @@ export const GraciasPorSuConsulta = () => {
 
   return (
     <>
-      <div className="mensajeGraciasContainer">        
+      <div className="mensajeGraciasContainer">           
         <h4 className="loConactaremosmessage">
           En menos de 24 horas nos contactaremos con usted
         </h4>
