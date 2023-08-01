@@ -74,7 +74,7 @@ export const Home = () => {
               realizadas en la propia Italia.
             </p>
             <h3 className="gancho1">
-              EN ACTAS ITALIANAS EXPRESS HACEMOS HASTA LO IMPOSIBLE PARA QUE CONSEGUIR
+              EN ACTAS ITALIANAS EXPRESS HACEMOS HASTA LO IMPOSIBLE PARA CONSEGUIR
               TU ACTA EN POCOS DIAS
             </h3>
             <p className="parrafo3">
