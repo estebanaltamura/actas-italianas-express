@@ -38,7 +38,7 @@ export const Form = () => {
 
     const fullName = e.target.fullName.value.toLowerCase();
     const phoneNumber = e.target.phone.value;
-    const mail = e.target.mail.value.toLowerCase();
+    const mail = e.target.mail.value.toLowerCase(); 
 
     const phoneNumberHandled = phoneNumberHandler(phoneNumber);
 
@@ -50,7 +50,7 @@ export const Form = () => {
         submitButton: submit.current,
       };
       
-      submitForm(fullName, phoneNumberHandled, mail, elements, section);
+      submitForm(fullName, phoneNumberHandled, mail, elements, section);    
     } else setAlerts(fullName, phoneNumberHandled, mail);
   };
 
