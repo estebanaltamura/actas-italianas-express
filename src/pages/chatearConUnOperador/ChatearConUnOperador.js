@@ -19,15 +19,15 @@ export const ChatearConUnOperador = () => {
 
   return (
     <>
-      <div className="formularioWhatsappContainer">        
+      <div className="chatearConUnOperadorContainer">        
         <h4 className="chatearPageMessage">
           Ingresa tu informacion de contacto para iniciar la asesoria gratis por
           whatsapp
         </h4>
         <Form />
-        <Link to="/home" className="volverButton" onClick={backToHomeHandler}>
+        <Link to="/home" className="volverButtonChatearConUnOperador" onClick={backToHomeHandler}>
             Volver
-            <BsChevronLeft className="volverIcon" />
+            <BsChevronLeft className="volverIconChatearConUnOperador" />
         </Link>
       </div>
     </>

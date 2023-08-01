@@ -121,7 +121,7 @@ export const Form = () => {
                   src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"
                 />
             }            
-            CHATEA AHORA
+            {section === "chatearConUnOperador" ? "CHATEA AHORA" : "ENVIAR"} 
           </button>
         </form>
       </div>

@@ -68,34 +68,33 @@
   left: 25px; 
 }
 
-.volverButton {  
+.graciasPorSuConsultaVolverButton {  
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   background: white;
-  color: #384d56;
-  margin-top: 20px;
+  color: #384d56;  
   width: 150px;
-  height: 66px;
-  transition: all 1s;
+  height: fit-content;  
   font-size: 20px;
   font-weight: 900;
+  margin-top: 20px;
 }
 
-.volverButton:hover {
+.graciasPorSuConsultaVolverButton:hover {
   color: #384d56 !important;
 }
 
-.volverButton:visited {
+.graciasPorSuConsultaVolverButton:visited {
   color: #384d56 !important;
 }
 
-.volverIcon {
+.graciasPorSuConsultaVolverIcon {
   position: absolute;
   width: 23px;
   height: 23px;
-  top: 22px;
+  top: 4px;
   left: 20px;
 }

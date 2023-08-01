@@ -36,9 +36,9 @@ export const GraciasPorSuConsulta = () => {
               src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"
             />
           </a>
-          <Link to="/home" className="volverButton" onClick={backToHomeHandler}>
+          <Link to="/home" className="graciasPorSuConsultaVolverButton" onClick={backToHomeHandler}>
             Volver
-            <BsChevronLeft className="volverIcon" />
+            <BsChevronLeft className="graciasPorSuConsultaVolverIcon" />
           </Link>
         </div>
       </div>

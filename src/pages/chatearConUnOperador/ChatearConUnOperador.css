@@ -1,4 +1,4 @@
-.formularioWhatsappContainer {
+.chatearConUnOperadorContainer {
   display: flex;
   flex-direction: column;
   padding-top: 30px;
@@ -16,7 +16,7 @@
   font-weight: 700;
 }
 
-.volverButton {
+.volverButtonChatearConUnOperador {
   position: relative;
   display: flex;
   align-items: center;
@@ -31,15 +31,15 @@
   font-weight: 900;
 }
 
-.volverButton:hover {
+.volverButtonChatearConUnOperador:hover {
   color: #384d56 !important;
 }
 
-.volverButton:visited {
+.volverButtonChatearConUnOperador:visited {
   color: #384d56 !important;
 }
 
-.volverIcon {
+.volverIconChatearConUnOperador {
   position: absolute;
   width: 23px;
   height: 23px;
