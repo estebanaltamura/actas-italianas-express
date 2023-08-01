@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { usePopUps } from "./usePopUps";
 import {
   getFirestore,  
   setDoc,
@@ -6,15 +7,13 @@ import {
   getDoc,
   updateDoc,
 } from "firebase/firestore";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 
 
 export const useSubmitLeadToFirestore = ()=>{
-
-  const db = getFirestore();
-  const MySwal = withReactContent(Swal);
+  const db = getFirestore();  
   const history = useNavigate()
+
+  const { submitFormError } = usePopUps()
   
   const date = new Date().toLocaleDateString("en-us", {
       weekday: "long",
@@ -68,8 +67,7 @@ export const useSubmitLeadToFirestore = ()=>{
       return docRef
     }
 
-    const setDocument = (docRef, lastLeadIdNumberPlusOne, date, fullName, phoneNumberHandled, mail, submitButton, section)=>{
-      console.log(section)
+    const setDocument = (docRef, lastLeadIdNumberPlusOne, date, fullName, phoneNumberHandled, mail, submitButton, section)=>{      
       setDoc(docRef, {
       fullname: `${lastLeadIdNumberPlusOne} - ${fullName}`,
       phoneNumber: phoneNumberHandled,
@@ -95,22 +93,18 @@ export const useSubmitLeadToFirestore = ()=>{
         submitButton.setAttribute("disabled", "false");
         submitButton.style.backgroundColor = "#384d56";
         submitButton.textContent = "CHATEA AHORA";      
-        MySwal.fire("No pudimos procesar su orden. Intente nuevamente");
+        submitFormError();
       });
     }
 
-    
-
-    const submitForm = async(fullName, phoneNumberHandled, mail, elements, section)=>{
-      console.log(section)
+    const submitForm = async(fullName, phoneNumberHandled, mail, elements, section)=>{      
       const { fullNameELement, phoneNumberElement, mailElement, submitButton } = elements       
       elementsBehaviorWhenSubmit(fullNameELement, phoneNumberElement, mailElement, submitButton)      
       const lastLeadIdNumber = await getLastLeadIdNumber()
       const lastLeadIdNumberPlusOne = await updateLastLeadIdNumberInFirestore(lastLeadIdNumber)
       const docRef = createDocument(lastLeadIdNumberPlusOne, fullName)
       setDocument(docRef, lastLeadIdNumberPlusOne, date, fullName, phoneNumberHandled, mail, submitButton, section)      
-    }
-   
+    }   
 
   return({
     submitForm

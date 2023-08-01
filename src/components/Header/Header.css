@@ -1,12 +1,10 @@
-header{
-  width: 100%;
-}
 
-.headerContainer {
+
+header{
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 30px;
   background-color: #384d56;
   color: white;

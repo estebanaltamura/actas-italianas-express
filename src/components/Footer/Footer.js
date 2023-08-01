@@ -4,7 +4,7 @@ import "./Footer.css";
 
 export const Footer = () => {
   return ( 
-    <footer className="footerContainer">
+    <footer>
       <p className="contactenosTitulo">CONTACTANOS Y SEGUINOS EN REDES</p>
 
       <div className="footerGrid">
@@ -14,6 +14,7 @@ export const Footer = () => {
         <a
           className="messageFooter"
           href="https://www.instagram.com/actasitalianasexpress/"
+          target="_blank"
         >
           @actasitalianasexpress
         </a>

@@ -5,11 +5,13 @@
   min-height: calc(100vh - 160px);
   height: fit-content;
   justify-content: center;
-  padding: 60px 0 60px 0;
+  padding: 60px 20px;
 }
 
 .loConactaremosmessage {
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
+  height: fit-content;
   margin: 0 auto;
   text-align: center;
   font-weight: 700;
@@ -28,7 +30,7 @@
 .ganchoChatMessage {
   text-align: center;
   font-weight: 700;
-  height: 50px;
+  height: fit-content;
   font-size: 22px;
   color: #63bee6;
 }
@@ -46,7 +48,8 @@
   background: #384d56;
   color: rgba(255, 255, 255, 0.8);
   margin-top: 20px;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   height: 66px;
   transition: all 1s;
   font-size: 20px;

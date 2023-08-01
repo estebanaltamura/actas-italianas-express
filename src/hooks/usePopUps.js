@@ -34,7 +34,11 @@ export const usePopUps = ()=>{
       ),
     });
   }
+
+  const submitFormError = ()=> MySwal.fire("No pudimos procesar su orden. Intente nuevamente")
+
   return({
-    phoneNumberFormHelperPopUp
+    phoneNumberFormHelperPopUp,
+    submitFormError
   })
 }

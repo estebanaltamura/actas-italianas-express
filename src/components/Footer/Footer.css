@@ -1,16 +1,18 @@
-.footerContainer {
+footer{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   height: 160px;
   background-color: #384d56;
   color: white;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
 }
 
 .contactenosTitulo {
   color: white;
+  width: 100%;
+  text-align: center;
 }
 
 .footerGrid {
@@ -18,10 +20,10 @@
   width: 100%;
   max-width: 355px;
   height: 80px;
+  margin: 0 auto;
   grid-template-rows: repeat(3, 40px);
   grid-template-columns: 55px 300px;
-  justify-content: center;
-  padding: 0px;
+  justify-content: center;  
   text-align: center;
 }
 
@@ -40,7 +42,7 @@ a.messageFooter {
   align-items: center;
   padding: 0;
   font-size: 18px;
-  color: white;
+  color: white;  
 }
 
 .messageFooter {
@@ -54,6 +56,7 @@ a.messageFooter {
   font-size: 18px;
   color: white;
   user-select: all;
+  width: fit-content;
 }
 
 

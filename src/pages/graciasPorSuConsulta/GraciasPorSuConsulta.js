@@ -13,6 +13,7 @@ export const GraciasPorSuConsulta = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setIsLoading(false)
   }, []);
 
   return (
