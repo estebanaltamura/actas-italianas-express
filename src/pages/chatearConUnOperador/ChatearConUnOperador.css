@@ -24,10 +24,9 @@
   cursor: pointer;
   background: white;
   color: #384d56;
-  margin: 23px auto;
+  margin: 0 auto;
   width: 150px;
-  height: fit-content;
-  transition: all 1s;
+  height: fit-content;  
   font-size: 20px;
   font-weight: 900;
 }
