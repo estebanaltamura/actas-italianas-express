@@ -55,8 +55,6 @@ export const useSubmitLeadToFirestore = ()=>{
       return lastLeadIdNumberPlusOne
     }
 
-
-
     const createDocument = (lastLeadIdNumberPlusOne, fullName)=>{
       const docRef = doc(
         db,
