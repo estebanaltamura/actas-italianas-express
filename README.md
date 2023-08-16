@@ -27,7 +27,7 @@ https://www.flixfinder.online
 * SweetAlert2: Alertas personalizadas y estilizadas.
 
 
-Instalación y Uso 🚀
+### Instalación y Uso 🚀
 * Clonar el repositorio:  
 git clone https://github.com/estebanaltamura/flixfinder.git
 
