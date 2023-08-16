@@ -11,7 +11,7 @@ https://www.flixfinder.online
 ### Características Principales:
 * Solicitud de Actas: Plataforma eficiente para facilitar la solicitud y obtención de actas italianas.
 * Interfaz Amigable: Diseñado para una experiencia de usuario óptima, garantizando una visualización completa y ordenada del contenido.
-* Conexión Directa: Posibilidad de iniciar conversaciones instantáneas a través de WhatsApp.
+* Conexión Directa: Posibilidad de iniciar conversaciones instantáneas a través de WhatsApp o de forma asincrona dejando los datos en un formularios los cuales estan persistido en firestore.
 * Resultados de la Prueba Comercial: Campaña en Instagram generó 48 leads, de los cuales 26 interactuaron directamente y 7 proporcionaron toda la información necesaria.
 * Resultado final: Una venta con un ROAS de 4.5 y un costo de adquisición de U$D 17.28.
 
