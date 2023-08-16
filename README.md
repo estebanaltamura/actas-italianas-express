@@ -28,8 +28,8 @@ https://www.flixfinder.online
 
 
 ### Instalación y Uso 🚀
-* Clonar el repositorio:  
-git clone https://github.com/estebanaltamura/flixfinder.git
+* Clonar el repositorio:      
+git clone https://github.com/estebanaltamura/flixfinder.git 
 
 * Navegar al directorio del proyecto:
 cd flixfinder
