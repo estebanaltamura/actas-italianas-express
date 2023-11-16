@@ -38,7 +38,7 @@ export const useSubmitLeadToFirestore = () => {
   };
 
   const elementsBehaviorWhenSubmitIsuccessful = (submitButton) => {
-    submitButton.setAttribute('disabled', 'false');
+    submitButton.removeAttribute('disabled');
     submitButton.style.backgroundColor = '#384d56';
     submitButton.textContent = 'ENVIADO!';
   };
