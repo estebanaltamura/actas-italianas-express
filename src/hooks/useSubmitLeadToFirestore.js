@@ -106,7 +106,6 @@ export const useSubmitLeadToFirestore = () => {
         submitButton.style.backgroundColor = '#384d56';
         submitButton.textContent = 'CHATEA AHORA';
         submitFormError();
-        as;
       });
   };
 
