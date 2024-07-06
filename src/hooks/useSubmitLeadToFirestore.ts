@@ -7,7 +7,20 @@ import { usePopUps } from './usePopUps';
 // ** Firebase import
 import { getFirestore, setDoc, doc, getDoc, updateDoc, DocumentReference } from 'firebase/firestore';
 
-export const useSubmitLeadToFirestore: () => void = () => {
+export const useSubmitLeadToFirestore: () => {
+  submitForm: (
+    fullName: string,
+    phoneNumberHandled: string,
+    mail: string,
+    elements: {
+      fullNameELement: HTMLInputElement;
+      phoneNumberElement: HTMLInputElement;
+      mailElement: HTMLInputElement;
+      submitButton: HTMLButtonElement;
+    },
+    section: string
+  ) => Promise<void>;
+} = () => {
   const db = getFirestore();
   const history = useNavigate();
 

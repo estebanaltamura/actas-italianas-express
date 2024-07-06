@@ -5,7 +5,7 @@ import { Box, Typography } from '@mui/material';
 import { BsInstagram } from 'react-icons/bs';
 import { MdAlternateEmail } from 'react-icons/md';
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <footer>
       <Typography sx={{ color: 'white', width: '100%', textAlign: 'center', fontSize: '20px' }}>

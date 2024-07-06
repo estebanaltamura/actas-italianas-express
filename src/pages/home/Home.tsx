@@ -240,7 +240,9 @@ export const Home: React.FC = () => {
             }}
           >
             <IoChatbubblesOutline style={{ width: '20px', height: '20px' }} />
-            <Typography sx={{ fontSize: '14px', color: 'white', fontWeight: 500, fontFamily: 'times-new-roman' }}>
+            <Typography
+              sx={{ fontSize: '14px', color: 'white', fontWeight: 500, fontFamily: 'times-new-roman !important' }}
+            >
               HABLEMOS
             </Typography>
           </Box>
