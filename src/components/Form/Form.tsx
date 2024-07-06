@@ -1,17 +1,16 @@
 // ** React import
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 // ** React Router DOM import
-import { useLocation } from 'react-router-dom';
 
 // ** Hooks import
 import { useFormValidator } from '../../hooks/useFormValidator';
 import { usePhoneNumberHandler } from '../../hooks/usePhoneNumberHandler';
-import { useSubmitLeadToFirestore } from '../../hooks/useSubmitLeadToFirestore';
 import { usePopUps } from '../../hooks/usePopUps';
+import { useSubmitLeadToFirestore } from '../../hooks/useSubmitLeadToFirestore';
 
 // ** Material UI import
-import { FormControl, Box, Typography, Button } from '@mui/material';
+import { Box, Button, FormControl, Typography } from '@mui/material';
 
 // ** Icons import
 import { TbHelp } from 'react-icons/tb';
