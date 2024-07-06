@@ -1,14 +1,13 @@
+// ** React Router DOM import
 import { useNavigate } from 'react-router-dom';
-import { usePopUps } from './usePopUps';
-import {
-  getFirestore,
-  setDoc,
-  doc,
-  getDoc,
-  updateDoc,
-} from 'firebase/firestore';
 
-export const useSubmitLeadToFirestore = () => {
+// ** Hooks import
+import { usePopUps } from './usePopUps';
+
+// ** Firebase import
+import { getFirestore, setDoc, doc, getDoc, updateDoc, DocumentReference } from 'firebase/firestore';
+
+export const useSubmitLeadToFirestore: () => void = () => {
   const db = getFirestore();
   const history = useNavigate();
 
@@ -24,10 +23,10 @@ export const useSubmitLeadToFirestore = () => {
   });
 
   const elementsBehaviorWhenSubmit = (
-    fullNameELement,
-    phoneNumberElement,
-    mailElement,
-    submitButton
+    fullNameELement: HTMLInputElement,
+    phoneNumberElement: HTMLInputElement,
+    mailElement: HTMLInputElement,
+    submitButton: HTMLButtonElement
   ) => {
     submitButton.setAttribute('disabled', 'true');
     submitButton.style.backgroundColor = '#63BEE6';
@@ -37,46 +36,55 @@ export const useSubmitLeadToFirestore = () => {
     mailElement.value = '';
   };
 
-  const elementsBehaviorWhenSubmitIsuccessful = (submitButton) => {
+  const elementsBehaviorWhenSubmitIsuccessful = (submitButton: HTMLButtonElement) => {
     submitButton.removeAttribute('disabled');
     submitButton.style.backgroundColor = '#384d56';
     submitButton.textContent = 'ENVIADO!';
   };
 
-  const getLastLeadIdNumber = async () => {
+  const getLastLeadIdNumber: () => Promise<number | undefined> = async () => {
     const queryDoc = doc(db, 'UltimoNumeroDeContacto', 'E9mEVykIO4N7719I6dh3');
-    const lastLeadIdNumberesponse = await getDoc(queryDoc);
-    const lastLeadIdNumber = lastLeadIdNumberesponse.data().ultimoNumero;
-    return lastLeadIdNumber;
+    try {
+      const lastLeadIdNumberesponse = await getDoc(queryDoc);
+      const lastLeadIdNumber = lastLeadIdNumberesponse.data()?.ultimoNumero;
+
+      if (typeof lastLeadIdNumber !== 'number') {
+        throw new Error('Error trying to get last lead id number');
+      }
+
+      return lastLeadIdNumber;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const updateLastLeadIdNumberInFirestore = async (lastLeadIdNumber) => {
+  const updateLastLeadIdNumberInFirestore: (lastLeadIdNumber: number) => Promise<number> = async (lastLeadIdNumber) => {
     const queryDoc = doc(db, 'UltimoNumeroDeContacto', 'E9mEVykIO4N7719I6dh3');
     const lastLeadIdNumberPlusOne = lastLeadIdNumber + 1;
     await updateDoc(queryDoc, { ultimoNumero: lastLeadIdNumberPlusOne });
+
     return lastLeadIdNumberPlusOne;
   };
 
-  const createDocument = (lastLeadIdNumberPlusOne, fullName) => {
-    const docRef = doc(
-      db,
-      'LeadsParaAgendar',
-      `${lastLeadIdNumberPlusOne} - ${fullName}`
-    );
+  const createDocument: (lastLeadIdNumberPlusOne: number, fullName: string) => DocumentReference = (
+    lastLeadIdNumberPlusOne,
+    fullName
+  ) => {
+    const docRef = doc(db, 'LeadsParaAgendar', `${lastLeadIdNumberPlusOne} - ${fullName}`);
 
     return docRef;
   };
 
   const setDocument = (
-    docRef,
-    lastLeadIdNumberPlusOne,
-    date,
-    fullName,
-    phoneNumberHandled,
-    mail,
-    submitButton,
-    section
-  ) => {
+    docRef: DocumentReference,
+    lastLeadIdNumberPlusOne: number,
+    date: string,
+    fullName: string,
+    phoneNumberHandled: string,
+    mail: string,
+    submitButton: HTMLButtonElement,
+    section: string
+  ): void => {
     setDoc(docRef, {
       fullname: `${lastLeadIdNumberPlusOne} - ${fullName}`,
       phoneNumber: phoneNumberHandled,
@@ -111,37 +119,31 @@ export const useSubmitLeadToFirestore = () => {
 
   //
   const submitForm = async (
-    fullName,
-    phoneNumberHandled,
-    mail,
-    elements,
-    section
+    fullName: string,
+    phoneNumberHandled: string,
+    mail: string,
+    elements: {
+      fullNameELement: HTMLInputElement;
+      phoneNumberElement: HTMLInputElement;
+      mailElement: HTMLInputElement;
+      submitButton: HTMLButtonElement;
+    },
+    section: string
   ) => {
-    const { fullNameELement, phoneNumberElement, mailElement, submitButton } =
-      elements;
-    elementsBehaviorWhenSubmit(
-      fullNameELement,
-      phoneNumberElement,
-      mailElement,
-      submitButton
-    );
+    const { fullNameELement, phoneNumberElement, mailElement, submitButton } = elements;
+    elementsBehaviorWhenSubmit(fullNameELement, phoneNumberElement, mailElement, submitButton);
     try {
       const lastLeadIdNumber = await getLastLeadIdNumber();
-      const lastLeadIdNumberPlusOne = await updateLastLeadIdNumberInFirestore(
-        lastLeadIdNumber
-      );
+
+      if (!lastLeadIdNumber) throw new Error('Error trying to get last lead id number');
+      const lastLeadIdNumberPlusOne = await updateLastLeadIdNumberInFirestore(lastLeadIdNumber);
+
       const docRef = createDocument(lastLeadIdNumberPlusOne, fullName);
-      setDocument(
-        docRef,
-        lastLeadIdNumberPlusOne,
-        date,
-        fullName,
-        phoneNumberHandled,
-        mail,
-        submitButton,
-        section
-      );
+
+      setDocument(docRef, lastLeadIdNumberPlusOne, date, fullName, phoneNumberHandled, mail, submitButton, section);
+
       elementsBehaviorWhenSubmitIsuccessful(submitButton);
+
       const timeOut = setTimeout(() => {
         submitButton.textContent = 'ENVIAR';
         clearTimeout(timeOut);

@@ -62,60 +62,60 @@ export const Form = () => {
 
   return (
     <>
-      <div className='formWhatsappContainer'>
+      <div className="formWhatsappContainer">
         <form
-          className='formFormWhatsapp'
-          action='/action_page.php'
+          className="formFormWhatsapp"
+          action="/action_page.php"
           onSubmit={onSubmitHandler}
         >
-          <div className='inputContainer'>
-            <span className='subtitle'>NOMBRE:</span>
+          <div className="inputContainer">
+            <span className="subtitle">NOMBRE:</span>
             <input
-              placeholder='Ingrese su nombre completo'
-              className='inputformWhatsapp'
+              placeholder="Ingrese su nombre completo"
+              className="inputformWhatsapp"
               ref={fullNameValueInput}
-              autoComplete='off'
-              type='text'
-              name='fullName'
+              autoComplete="off"
+              type="text"
+              name="fullName"
               onKeyUp={resetAlerts}
             />
-            <span className='inputAlerts'>{fullNameAlert}</span>
+            <span className="inputAlerts">{fullNameAlert}</span>
           </div>
 
-          <div className='inputContainer'>
-            <span className='subtitle'>WHATSAPP:</span>
+          <div className="inputContainer">
+            <span className="subtitle">WHATSAPP:</span>
             <input
-              placeholder='Ingrese su Whatsapp Ejemplo 113 859 7894'
-              className='inputformWhatsapp'
+              placeholder="Ingrese su Whatsapp Ejemplo 113 859 7894"
+              className="inputformWhatsapp"
               ref={phoneValueInput}
-              autoComplete='off'
-              type='number'
-              name='phone'
+              autoComplete="off"
+              type="number"
+              name="phone"
               onKeyUp={resetAlerts}
             />
             <TbHelp
               onClick={inputPhoneHelpClickHandler}
-              className='inputPhoneHelp'
+              className="inputPhoneHelp"
             />
-            <span className='inputAlerts'>{phoneAlert}</span>
+            <span className="inputAlerts">{phoneAlert}</span>
           </div>
 
-          <div className='inputContainer'>
-            <span className='subtitle'>MAIL:</span>
+          <div className="inputContainer">
+            <span className="subtitle">MAIL:</span>
             <input
-              placeholder='Ingrese su e-mail Ejemplo mail@mail.com'
-              className='inputformWhatsapp'
+              placeholder="Ingrese su e-mail Ejemplo mail@mail.com"
+              className="inputformWhatsapp"
               ref={mailValueInput}
-              autoComplete='off'
-              type='text'
-              name='mail'
+              autoComplete="off"
+              type="text"
+              name="mail"
               onKeyUp={resetAlerts}
             />
-            <span className='inputAlerts'>{mailAlert}</span>
+            <span className="inputAlerts">{mailAlert}</span>
           </div>
           <button
             ref={submit}
-            type='submit'
+            type="submit"
             className={
               section === 'chatearConUnOperador'
                 ? 'chatButtonChatear'
@@ -124,8 +124,9 @@ export const Form = () => {
           >
             {section === 'chatearConUnOperador' && (
               <img
-                className='iconWhatsappChatear'
-                src='https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png'
+                className="iconWhatsappChatear"
+                src="https://i.postimg.cc/sgz0nSHy/icons8-whatsapp-96.png"
+                alt=""
               />
             )}
             {section === 'chatearConUnOperador' ? 'CHATEA AHORA' : 'ENVIAR'}

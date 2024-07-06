@@ -1,4 +1,4 @@
-import "./Header.css";
+import './Header.css';
 
 export const Header = () => {
   return (
@@ -11,4 +11,3 @@ export const Header = () => {
     </header>
   );
 };
- 
