@@ -1,8 +1,6 @@
 // ** React import
 import { useRef } from 'react';
 
-// ** React Router DOM import
-
 // ** Hooks import
 import { useFormValidator } from '../../hooks/useFormValidator';
 import { usePhoneNumberHandler } from '../../hooks/usePhoneNumberHandler';
