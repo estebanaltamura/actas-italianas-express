@@ -222,7 +222,7 @@ export const Home: React.FC = () => {
               animationDelay: '2.5s',
               animationIterationCount: 'infinite',
               position: 'fixed',
-              bottom: currentScreenWidth < 600 ? '120px' : '200px',
+              bottom: currentScreenWidth < 600 ? '90px' : '200px',
               right: currentScreenWidth < 600 ? '40px' : '60px',
               width: '240px',
               height: '60px',
