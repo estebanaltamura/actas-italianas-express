@@ -228,8 +228,8 @@ export const Home: React.FC = () => {
               height: '60px',
               zIndex: 1,
               backgroundColor: '#384d56',
-              borderRadius: '15px',
               border:'2px solid #25d366',
+              borderRadius: '15px',
               boxShadow: '5px 5px 10px #4c4c4c',
               alignItems: 'center',
               textAlign: 'center',
@@ -239,8 +239,8 @@ export const Home: React.FC = () => {
               fontSize: '14px',
               fontWeight: 500,
               '&:visited, &:hover': {
-              background: '#384d56 !important',
-              color: 'white !important',
+                background: '#ed8936 !important',
+                color: 'white !important',
             },
             }}
           >
