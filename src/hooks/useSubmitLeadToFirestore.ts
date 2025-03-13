@@ -116,7 +116,7 @@ export const useSubmitLeadToFirestore: () => {
           }, 3000);
 
           window.open(
-            'https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.',
+            'https://wa.me/+34610492978?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.',
             '_blank'
           );
         }

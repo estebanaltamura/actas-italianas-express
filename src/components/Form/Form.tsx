@@ -178,10 +178,11 @@ export const Form: React.FC = () => {
             border: 'none',
             borderRadius: '8px',
             boxShadow: section === 'chatearConUnOperador' ? '2px 2px 7px #38d39f70' : 'none',
-            background: '#384d56',
+            background: '#ed8936',
             color: 'rgba(255, 255, 255, 0.8)',
+            font: 'arial',
             fontSize: '20px',
-            fontWeight: '700',
+            fontWeight: '700 !important',
             '&:visited, &:hover': {
               background: '#384d56 !important',
               color: 'white !important',

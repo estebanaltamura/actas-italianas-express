@@ -34,28 +34,28 @@ export const Home: React.FC = () => {
 
   const whatsappIconAnimation = keyframes`
   0% {
-    width: 135px;
-    height: 40px;
-  }
-  5% {
-    width: 136px;
-    height: 41px;
-  }
-  10% {
-    width: 135px;
-    height: 40px;
+    width: 240px;
+    height: 60px;
   }
   15% {
-    width: 136px;
-    height: 41px;
+    width: 244px;
+    height: 62px;
   }
-  20% {
-    width: 135px;
-    height: 40px;
+  30% {
+    width: 240px;
+    height: 60px;
+  }
+  45% {
+    width: 244px;
+    height: 62px;
+  }
+  60% {
+    width: 240px;
+    height: 60px;
   }
   100% {
-    width: 135px;
-    height: 40px;
+    width: 240px;
+    height: 60px;
   }
 `;
 
@@ -216,19 +216,20 @@ export const Home: React.FC = () => {
             sx={{
               display: 'flex',
               padding: '2px 15px 0 15px',
-              justifyContent: 'space-between',
+              justifyContent: 'center',
               animationName: `${whatsappIconAnimation}`,
-              animationDuration: '4s',
-              animationDelay: '4s',
+              animationDuration: '2.5s',
+              animationDelay: '2.5s',
               animationIterationCount: 'infinite',
               position: 'fixed',
               bottom: '200px',
-              right: '20px',
-              width: '135px',
-              height: '40px',
+              right: '60px',
+              width: '240px',
+              height: '60px',
               zIndex: 1,
-              backgroundColor: '#14a1de',
+              backgroundColor: '#384d56',
               borderRadius: '15px',
+              border:'2px solid #25d366',
               boxShadow: '5px 5px 10px #4c4c4c',
               alignItems: 'center',
               textAlign: 'center',
@@ -237,13 +238,17 @@ export const Home: React.FC = () => {
 
               fontSize: '14px',
               fontWeight: 500,
+              '&:visited, &:hover': {
+              background: '#384d56 !important',
+              color: 'white !important',
+            },
             }}
           >
-            <IoChatbubblesOutline style={{ width: '20px', height: '20px' }} />
+            <IoChatbubblesOutline style={{ width: '30px', height: '30px' }} />
             <Typography
-              sx={{ fontSize: '14px', color: 'white', fontWeight: 500, fontFamily: 'times-new-roman !important' }}
+              sx={{ fontSize: '17px', color: 'white', fontWeight: 600, fontFamily: 'arial !important', marginLeft: '12px' }}
             >
-              HABLEMOS
+              CHATEAR AHORA
             </Typography>
           </Box>
         </Link>
