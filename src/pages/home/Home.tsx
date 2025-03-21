@@ -211,7 +211,10 @@ export const Home: React.FC = () => {
           </Typography>
         </Box>
 
-        <Link to='/chatearConUnOperador'>
+        <Box sx={{cursor:'pointer'}} onClick={()=>window.open(
+            'https://wa.me/+34610492978?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.',
+            '_blank'
+          )}>
           <Box
             sx={{
               display: 'flex',
@@ -235,7 +238,7 @@ export const Home: React.FC = () => {
               textAlign: 'center',
               margin: '0 auto',
               color: 'white',
-
+cursor:'pointer',
               fontSize: '14px',
               fontWeight: 500,
               '&:visited, &:hover': {
@@ -246,12 +249,12 @@ export const Home: React.FC = () => {
           >
             <IoChatbubblesOutline style={{ width: '30px', height: '30px' }} />
             <Typography
-              sx={{ fontSize: '17px', color: 'white', fontWeight: 600, fontFamily: 'arial !important', marginLeft: '12px' }}
+              sx={{ fontSize: '17px', color: 'white', fontWeight: 600, fontFamily: 'arial !important', marginLeft: '12px', cursor:'pointer' }}
             >
               CHATEAR AHORA
             </Typography>
           </Box>
-        </Link>
+        </Box>
       </Box>
     </Box>
   );
