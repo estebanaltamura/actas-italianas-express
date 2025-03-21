@@ -212,7 +212,7 @@ export const Home: React.FC = () => {
         </Box>
 
         <Box sx={{cursor:'pointer'}} onClick={()=>window.open(
-            'https://wa.me/+34610492978?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.',
+            'https://wa.me/+34610492978?text=Hola!%20Estoy%20interesado%20en%20gestionar%20un%20acta%20italiana.',
             '_blank'
           )}>
           <Box

@@ -76,7 +76,7 @@ export const GraciasPorSuConsulta: React.FC = () => {
             Si quiere puede hablar ya mismo con un representante
           </Typography>
           <a
-            href='https://wa.me/+5491127704684?text=Hola!%20Estoy%20interesado%20en%20el%20servicio,%20por%20favor%20contactarse%20a%20la%20brevedad.'
+            href='https://wa.me/+34610492978?text=Hola!%20Estoy%20interesado%20en%20gestionar%20un%20acta%20italiana.'
             target='_blank'
             rel='noreferrer'
             style={{ width: '100%', maxWidth: '290px' }}
