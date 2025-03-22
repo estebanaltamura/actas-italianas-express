@@ -55,6 +55,10 @@ export const Form: React.FC = () => {
       };
 
       submitForm(fullName, phoneNumberHandled, mail, elements, section as string);
+      window.open(
+        'https://wa.me/+34610492978?text=Hola!%20Estoy%20interesado%20en%20gestionar%20un%20acta%20italiana.',
+        '_blank'
+      );
     } else setAlerts(fullName, phoneNumberHandled, mail);
   };
 

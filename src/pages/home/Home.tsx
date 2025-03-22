@@ -182,7 +182,7 @@ export const Home: React.FC = () => {
           <Typography
             sx={{ fontSize: '20px', color: '#d55e20', lineHeight: '30px', textAlign: 'center', fontWeight: '700' }}
           >
-            Déjenos sus datos y lo contactaremos en menos de 24 horas
+            Dejanos sus datos y habla con nosotros
           </Typography>
           <Form />
           <Box sx={{ marginTop: '20px', border: '1px solid #bebebe' }}></Box>
